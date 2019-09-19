@@ -17,7 +17,10 @@ import java.util.Random;
 
 public class Text extends BaseDao {
     public static void main(String[] args) {
-        System.out.println("java");
+
+//        *
+//        *
+//
 //        Text text = new Text();
 //        List<Integer> list  = text.getIntegers();
 //        for(Integer integer:list){
