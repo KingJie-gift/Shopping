@@ -17,11 +17,12 @@ import java.util.Random;
 
 public class Text extends BaseDao {
     public static void main(String[] args) {
-        Text text = new Text();
-        List<Integer> list  = text.getIntegers();
-        for(Integer integer:list){
-            text.retDel(integer);
-        }
+        System.out.println("anroid");
+//        Text text = new Text();
+//        List<Integer> list  = text.getIntegers();
+//        for(Integer integer:list){
+//            text.retDel(integer);
+//        }
 //        List<Integer> list = text.getAll();
 //        Random random = new Random();
 //
