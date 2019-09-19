@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/PhonePatt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/PhonePatt.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +32,9 @@
     <option name="PATH_TO_GIT" value="C:\Program Files\Git\bin\git.exe" />
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="master" />
+        <option value="mather" />
+        <option value="2" />
         <option value="王国杰" />
       </list>
     </option>
@@ -302,8 +305,16 @@
       <workItem from="1568894518501" duration="7632000" />
       <workItem from="1568908135441" duration="243000" />
       <workItem from="1568912539860" duration="43000" />
-      <workItem from="1568912606175" duration="58000" />
+      <workItem from="1568912606175" duration="336000" />
     </task>
+    <task id="LOCAL-00001" summary="测试">
+      <created>1568912788671</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568912788671</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,5 +332,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试" />
   </component>
 </project>

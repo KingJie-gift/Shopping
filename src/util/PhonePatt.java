@@ -12,6 +12,7 @@ public class PhonePatt {
 
     public String phonePattNum(String phone){
         StringBuffer sb = new StringBuffer();
+//        上成验证码随机数
         Random ran = new Random();
         for(int i = 0 ; i < 6 ; i ++ ){
             sb.append(ran.nextInt(9));
