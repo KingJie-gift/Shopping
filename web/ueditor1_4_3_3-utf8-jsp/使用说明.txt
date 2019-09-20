@@ -1,0 +1,10 @@
+baidu_enditor是jsp项目，已经实现
+utf8-jsp是源代码，在自己项目中使用的步骤如下：
+1.将utf8-jsp中全部代码拷贝到项目的WebRoot中
+2.将utf8-jsp中jsp下lib下的全部jar包拷贝到WebRoot中WEB-INF的lib中
+3.修改WebRoot中jsp中的config.json文件：
+	找到imageUrlPrefix，原来的值是""，修改成"/项目名/"，如"/MyJsp/"
+4.将代码嵌入到需要的用到的地方，可以模仿baidu_enditor项目中的index.jsp页面
+5.在Servlet中直接取值，就是含有文字图片等的html代码
+6.图片在编辑富文本框的时候，已经上传到服务器了，路径是：tomcat的webapps/项目名/ueditor...找到最里面就是图片了
+这个路径就是WebRoot中jsp中的config.json文件中imagePathFormat属性的值来定义的

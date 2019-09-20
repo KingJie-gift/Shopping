@@ -23,5 +23,7 @@
     <orderEntry type="library" name="commons-codec-1.4" level="project" />
     <orderEntry type="library" name="fluent-hc-4.2.5" level="project" />
     <orderEntry type="library" name="commons-codec-1.6" level="project" />
+    <orderEntry type="library" name="commons-codec-1.9" level="project" />
+    <orderEntry type="library" name="commons-codec-1.9 (2)" level="project" />
   </component>
 </module>
