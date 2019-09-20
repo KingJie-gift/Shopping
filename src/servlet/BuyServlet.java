@@ -19,24 +19,27 @@ public class BuyServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         request.setCharacterEncoding("utf-8");
         String op = request.getParameter("op");
-        if("byShow".equals(op)){
-            if(((Enter)(request.getSession().getAttribute("e")))!=null){
-                int id = ((Enter)(request.getSession().getAttribute("e"))).getEnter_id();
-                List<Address> addresses = new AddressService().getListAddress(id);
-                request.getSession().setAttribute("address",addresses);
-            }else{
+        if("byShow".equals(op)) {
+            if (((Enter) (request.getSession().getAttribute("e"))) == null) {
                 out.print("1");
+                return;
             }
-            String sid = request.getParameter("sid");
-            String type = request.getParameter("type");
-            String num = request.getParameter("num");
-            Commodity_info comm = new Commodity_infoService().commById(Integer.parseInt(sid));
-            Abapt ab = new AbaptService().getAbapt(Integer.parseInt(type));
-
+            String page = request.getParameter("page");
+            if ("details".equals(page)) {
+                String sid = request.getParameter("sid");
+                String type = request.getParameter("type");
+                String num = request.getParameter("num");
+                Commodity_info comm = new Commodity_infoService().commById(Integer.parseInt(sid));
+                Abapt ab = new AbaptService().getAbapt(Integer.parseInt(type));
 //            加载地址
-            request.getSession().setAttribute("comm",comm);
-            request.getSession().setAttribute("ab",ab);
-            request.getSession().setAttribute("num",num);
+                request.getSession().setAttribute("comm",comm);
+                request.getSession().setAttribute("ab",ab);
+                request.getSession().setAttribute("num",num);
+            }
+            int id = ((Enter)(request.getSession().getAttribute("e"))).getEnter_id();
+            List<Address> addresses = new AddressService().getListAddress(id);
+            request.getSession().setAttribute("address",addresses);
+
         }else if("add".equals(op)){
             String comm_id = request.getParameter("comm");
             String address = request.getParameter("address");

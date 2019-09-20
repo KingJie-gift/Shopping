@@ -9,4 +9,6 @@ public interface BuyShowDaoImpl {
     public int byShow(Buyshow buyshow);
 //    显示当前用户信息
     public List<Buyshow> byShowInfo(int id);
+
+
 }

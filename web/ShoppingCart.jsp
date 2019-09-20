@@ -21,7 +21,7 @@
       <h3>夏季清仓</h3>
       <p>宝宝被子、宝宝衣服3折起</p>
     </div>
-    <form action="BuyServlet?op=add&comm=${comm.commodity_info_id}" method="post">
+<%--    <form action="BuyServlet?op=add&comm=${comm.commodity_info_id}" method="post">--%>
     <div class="cart w1200">
       <div style="border: #3F3F3F">
         <p style="font-size: 18px">请选择地址</p>
@@ -76,11 +76,13 @@
 
       <div class="OrderList">
         <div class="order-content" id="list-cont">
+          <c:forEach var="i" items="${shop_by}" varStatus="in">
             <ul class="item-content layui-clear">
               <li class="th th-chk">
                 <div class="select-all">
                   <div class="cart-checkbox">
-                    <input class="CheckBoxShop check"  type="hidden" num="all" name="select-all" value="true">
+                    <input class="CheckBoxShop check"  type="checkbox" num="all" name="select-all" value="${i.shopcart_id}">
+                    <input type="hidden" value="${i.shopcart_id}" name="comm_id" />
                   </div>
                 </div>
               </li>
@@ -88,31 +90,35 @@
                 <div class="item-cont">
                   <a href="javascript:;"><img src="res/static/img/paging_img1.jpg" alt=""></a>
                   <div class="text">
-                    <div class="title">${comm.commodity_info_name}</div>
-                    <p>${ab.abapt_name}</p>
-                    <input type="hidden" name="type" value="${ab.abapt_id}"/>
+                    <div class="title">${i.commodity.commodity_info_name}</div>
+                    <p>${i.abapt.abapt_name}</p>
+                    <input type="hidden" value="${i.abapt.abapt_id}" name="bapt"/>
+                    <input type="hidden" value="${in.index}" name="index"/>
                   </div>
                 </div>
               </li>
               <li class="th th-price">
-                <span class="th-su">${comm.commodity_info_money}</span>
+                <span class="th-su">${i.commodity.commodity_info_money}</span>
               </li>
               <li class="th th-amount">
-                <div class="box-btn layui-clear">
+                <div class="box-btn layui-clear" id="xx">
                   <div class="less layui-btn">-</div>
-                  <input class="Quantity-input" type="" name="" value="${num}" disabled="disabled">
+                  <input class="Quantity-input" type="text" value="${i.shopcart_num}" name="num" readonly>
                   <div class="add layui-btn">+</div>
+
+
+                    <%--                    <input type="text" name='commMoney' value="" />--%>
                 </div>
               </li>
               <li class="th th-sum">
-                <span class="sum">${comm.commodity_info_money*num}</span>
+                <span class="sum">${i.commodity.commodity_info_money*i.shopcart_num}</span>
               </li>
               <li class="th th-op">
-                <a href="ShopcartServlet?op=del&sid="></a>
+                <a href="ShopcartServlet?op=del&sid=${i.shopcart_id}">删除</a>
               </li>
             </ul>
+          </c:forEach>
         </div>
-      </div>
 
       <div class="FloatBarHolder layui-clear">
         <div class="th th-chk">
@@ -136,7 +142,7 @@
         </div>
       </div>
     </div>
-      </form>
+<%--      </form>--%>
   </div>
 
 <script type="text/javascript">
@@ -161,8 +167,6 @@
     // })
     // 
     car.init()
-
-
 });
 </script>
 </body>

@@ -19,7 +19,8 @@
         <p>手机号<input name="phone" type="text"></p>
         <p>邮编<input type="number" name="code"></p>
         <p><input type="checkbox" name="default"/>选择使用默认地址</p>
-        <p><input type="submit" value="提交"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置"/></p>
+        <p><input type="submit" value="提交"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置"/>
+            <input type="reset" onclick="window.close()" value="取消"/></p></p>
     </form>
 </div>
 </body>

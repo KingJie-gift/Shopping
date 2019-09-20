@@ -22,6 +22,10 @@ public class CollectServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String op = request.getParameter("op");
         if("add".equals(op)){
+            if((Enter)(request.getSession().getAttribute("e"))==null){
+                response.sendRedirect("login.jsp");
+                return;
+            }
             String sid = request.getParameter("sid");
             String type = request.getParameter("type");
             if("1".equals(type)){

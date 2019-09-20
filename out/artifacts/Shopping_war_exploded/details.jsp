@@ -39,7 +39,11 @@
         }
         var num = $("#num").val();
         $.post("ShopcartServlet",{op:"addshop",shoid:${comm.commodity_info_id},type:type,num:num},function (data) {
-            location.href = 'ShopcartServlet?op=show';
+            if(data=="null"){
+                location.href='login.jsp';
+            }else {
+                location.href = 'ShopcartServlet?op=show';
+            }
         });
     });
     $("#ok").click(function () {
@@ -56,7 +60,7 @@
             return;
         }
         var num = $("#num").val();
-        $.post("BuyServlet",{op:"byShow",type:type,num:num,sid:${comm.commodity_info_id}},function (data) {
+        $.post("BuyServlet",{op:"byShow",page:"details",type:type,num:num,sid:${comm.commodity_info_id}},function (data) {
             if(data=="1"){
                 location.href='login.jsp';
             }else {
@@ -91,7 +95,7 @@
                         <h4>${comm.commodity_info_name} </h4>
                         <c:choose>
                             <c:when test="${coll.enter.enter_id==e.enter_id&&coll.commodity.commodity_info_id==comm.commodity_info_id}">
-                                <span onclick="location.href='CollectServlet?op=add&sid=${comm.commodity_info_id}&type=2&del=${coll.collect_id}'"><i class="i layui-icon layui-icon-rate-solid"></i>以收藏</span>
+                                <span onclick="location.href='CollectServlet?op=add&sid=${comm.commodity_info_id}&type=2&del=${coll.collect_id}'"><i class="i layui-icon layui-icon-rate-solid"></i>已收藏</span>
                             </c:when>
                             <c:otherwise>
                                 <span onclick="location.href='CollectServlet?op=add&sid=${comm.commodity_info_id}&type=1'"><i class="layui-icon layui-icon-rate-solid"></i>收藏</span>

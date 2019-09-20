@@ -13,4 +13,7 @@ public interface ShopcartDaoImpl  {
 
 //    删除商品
     public int delShopcart(int id);
+
+//    根据编号查询商品
+    public Shopcart shById(int id);
 }

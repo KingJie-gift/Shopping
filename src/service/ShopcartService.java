@@ -15,4 +15,7 @@ public class ShopcartService {
     public int delShopcart(int id) {
         return new ShopcartDao().delShopcart(id);
     }
+    public Shopcart shById(int id) {
+        return new ShopcartDao().shById(id);
+    }
 }

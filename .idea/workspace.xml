@@ -6,43 +6,38 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="abcdefg">
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/firstPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/title.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/firstPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/title.jsp" afterDir="false" />
+    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/ShoppingCart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/InitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/InitServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/PhonePatt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/PhonePatt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/Text.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/buytoday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/buytoday.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/dao/ShopcartDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/dao/ShopcartDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/dao/impl/ShopcartDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/dao/impl/ShopcartDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/service/ShopcartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/service/ShopcartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/AddressServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/AddressServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/BuyServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/BuyServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/CollectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/CollectServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/ShopcartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/ShopcartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/address.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShow.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/collect.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/collect.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/commodity.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/information.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/information.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/logup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/logup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/shopcart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/shopcart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/InitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/InitServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shopping/util/PhonePatt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/util/PhonePatt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shopping/util/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/util/Text.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/Commodity_smallDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/Commodity_smallDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/InitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/InitServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/buytoday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/buytoday.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/dao/ShopcartDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/dao/ShopcartDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/dao/impl/ShopcartDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/dao/impl/ShopcartDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/service/ShopcartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/service/ShopcartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/AddressServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/AddressServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/BuyServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/BuyServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/CollectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/CollectServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/ShopcartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/ShopcartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ShopcartDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ShopcartDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/BuyShowDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/BuyShowDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/ShopcartDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ShopcartDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ShopcartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ShopcartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/AddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/AddressServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/BuyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/BuyServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/CollectServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/CollectServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/ShopcartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/ShopcartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/address.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/byShopping.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/byShow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/byShow.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/collect.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/collect.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/commodity.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/information.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/information.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/logup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/shopcart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/shopcart.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,7 +90,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -110,19 +105,24 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded\content" />
-      <recent name="C:\Users\Administrator\Shopping\web\content" />
-      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded" />
-      <recent name="C:\Users\Administrator\Shopping\web\matter" />
-      <recent name="C:\Users\Administrator\Shopping\web" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Shopping\content" />
       <recent name="C:\Users\Administrator\Shopping\web" />
       <recent name="C:\Users\Administrator\Shopping\web\html" />
       <recent name="C:\Users\Administrator\Shopping\web\html\json" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Shopping\web" />
+      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded\content" />
+      <recent name="C:\Users\Administrator\Shopping\web\content" />
+      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded" />
+      <recent name="C:\Users\Administrator\Shopping\web\matter" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="e" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -262,6 +262,63 @@
         </option>
       </method>
     </configuration>
+    <configuration name="addressif.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:9990/addressif.jsp" />
+      <deployment>
+        <artifact name="Shopping:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Shopping_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="addressif_jsp_Shopping" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="27256" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Shopping:war exploded" />
+        </option>
+      </method>
+    </configuration>
     <configuration name="index.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:9990/index.jsp" />
       <deployment>
@@ -308,9 +365,11 @@
       <item itemvalue="Application.BrandDao" />
       <item itemvalue="Tomcat Server.index.jsp" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.43" />
+      <item itemvalue="Tomcat Server.addressif.jsp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Tomcat Server.addressif.jsp" />
         <item itemvalue="Application.BrandDao" />
       </list>
     </recent_temporary>
@@ -343,7 +402,7 @@
       <workItem from="1568912539860" duration="43000" />
       <workItem from="1568912606175" duration="586000" />
       <workItem from="1568939005519" duration="25000" />
-      <workItem from="1568940031756" duration="4481000" />
+      <workItem from="1568940031756" duration="19957000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1568912788671</created>
@@ -366,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568913089453</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="wanzheng">
+      <created>1568945971630</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568945971630</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +454,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试" />
     <MESSAGE value="abcdefg" />
-    <option name="LAST_COMMIT_MESSAGE" value="abcdefg" />
+    <MESSAGE value="wanzheng" />
+    <option name="LAST_COMMIT_MESSAGE" value="wanzheng" />
   </component>
 </project>

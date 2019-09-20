@@ -59,65 +59,71 @@
         </div>  
       </div>
       <div class="OrderList">
-        <div class="order-content" id="list-cont">
-          <c:forEach var="i" items="${shop}">
-            <ul class="item-content layui-clear">
-              <li class="th th-chk">
-                <div class="select-all">
-                  <div class="cart-checkbox">
-                    <input class="CheckBoxShop check"  type="checkbox" num="all" name="select-all" value="true">
+        <form action="ShopcartServlet?op=car" method="post">
+          <div class="order-content" id="list-cont">
+            <c:forEach var="i" items="${shop}" varStatus="in">
+              <ul class="item-content layui-clear">
+                <li class="th th-chk">
+                  <div class="select-all">
+                    <div class="cart-checkbox">
+                      <input class="CheckBoxShop check"  type="checkbox" num="all" name="select-all" value="${i.shopcart_id}">
+                      <input type="hidden" value="${i.shopcart_id}" name="comm_id" />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="th th-item">
-                <div class="item-cont">
-                  <a href="javascript:;"><img src="res/static/img/paging_img1.jpg" alt=""></a>
-                  <div class="text">
-                    <div class="title">${i.commodity.commodity_info_name}</div>
-                    <p>${i.abapt.abapt_name}</p>
+                </li>
+                <li class="th th-item">
+                  <div class="item-cont">
+                    <a href="javascript:;"><img src="res/static/img/paging_img1.jpg" alt=""></a>
+                    <div class="text">
+                      <div class="title">${i.commodity.commodity_info_name}</div>
+                      <p>${i.abapt.abapt_name}</p>
+                      <input type="hidden" value="${i.abapt.abapt_id}" name="bapt"/>
+                      <input type="hidden" value="${in.index}" name="index"/>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="th th-price">
-                <span class="th-su">${i.commodity.commodity_info_money}</span>
-              </li>
-              <li class="th th-amount">
-                <div class="box-btn layui-clear">
-                  <div class="less layui-btn">-</div>
-                  <input class="Quantity-input" type="" name="" value="${i.shopcart_num}" disabled="disabled">
-                  <div class="add layui-btn">+</div>
-                </div>
-              </li>
-              <li class="th th-sum">
-                <span class="sum">${i.commodity.commodity_info_money*i.shopcart_num}</span>
-              </li>
-              <li class="th th-op">
-                <a href="ShopcartServlet?op=del&sid=${i.shopcart_id}">删除</a>
-              </li>
-            </ul>
-          </c:forEach>
-        </div>
-      </div>
+                </li>
+                <li class="th th-price">
+                  <span class="th-su">${i.commodity.commodity_info_money}</span>
+                </li>
+                <li class="th th-amount">
+                  <div class="box-btn layui-clear" id="xx">
+                    <div class="less layui-btn">-</div>
+                    <input class="Quantity-input" type="text" value="${i.shopcart_num}" name="num" readonly>
+                    <div class="add layui-btn">+</div>
 
-      <div class="FloatBarHolder layui-clear">
-        <div class="th th-chk">
-          <div class="select-all">
-            <div class="cart-checkbox">
-              <input class="check-all check" id="" name="select-all" type="checkbox"  value="true">
+
+<%--                    <input type="text" name='commMoney' value="" />--%>
+                  </div>
+                </li>
+                <li class="th th-sum">
+                  <span class="sum">${i.commodity.commodity_info_money*i.shopcart_num}</span>
+                </li>
+                <li class="th th-op">
+                  <a href="ShopcartServlet?op=del&sid=${i.shopcart_id}">删除</a>
+                </li>
+              </ul>
+            </c:forEach>
+          </div>
+        <div class="FloatBarHolder layui-clear">
+          <div class="th th-chk">
+            <div class="select-all">
+              <div class="cart-checkbox">
+                <input class="check-all check" id="" type="hidden"  value="true">
+              </div>
+              <label>&nbsp;&nbsp;已选<span class="Selected-pieces">0</span>件</label>
             </div>
-            <label>&nbsp;&nbsp;已选<span class="Selected-pieces">0</span>件</label>
+          </div>
+          <div class="th batch-deletion">
+            <span class="batch-dele-btn">批量删除</span>
+          </div>
+          <div class="th Settlement">
+            <input type="submit" value="结算" style="display: inline-block;padding: 40px;background: #eb7350"/>
+          </div>
+          <div class="th total">
+            <p>应付：<span class="pieces-total">0</span></p>
           </div>
         </div>
-        <div class="th batch-deletion">
-          <span class="batch-dele-btn">批量删除</span>
-        </div>
-        <div class="th Settlement">
-          <button class="layui-btn" onclick="location.href='byShopping.jsp'">结算</button>
-        </div>
-        <div class="th total">
-          <p>应付：<span class="pieces-total">0</span></p>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 
@@ -144,7 +150,15 @@
     // 
     car.init()
 
-
+    $("[name='select-all']").click(function () {
+      if ($(this).get(0).checked){
+        $(this).parents("li").next().find('[name="bapt"]').removeAttr("disabled");
+        $(this).parents("li").next().next().next().find('[name="num"]').removeAttr("disabled");
+      }else {
+        $(this).parents("li").next().find('[name="bapt"]').attr("disabled","disabled");
+        $(this).parents("li").next().next().next().find('[name="num"]').attr("disabled","disabled");
+      }
+    });
 });
 </script>
 </body>

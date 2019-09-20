@@ -15,33 +15,27 @@
 <body>
 
 <%@ include file="firstPage.jsp"%>
-
-
-<script type="text/javascript">
-  </script>
-
   <div class="content content-nav-base shopcart-content">
     <%@ include file="title.jsp"%>
     <div class="banner-bg w1200">
       <h3>夏季清仓</h3>
       <p>宝宝被子、宝宝衣服3折起</p>
     </div>
-      <form action="BuyServlet?op=add&comm=${comm.commodity_info_id}" method="post">
+    <form action="BuyServlet?op=add&comm=${comm.commodity_info_id}" method="post">
     <div class="cart w1200">
       <div style="border: #3F3F3F">
         <p style="font-size: 18px">请选择地址</p>
         <hr/>
-          <c:forEach var="i" items="${address}">
-              <p style="border: red;margin-right: 10px"><input type="radio"  name="address" class="address" <c:if test="${i.address_default==1}">checked</c:if> value="${i.address_id}"/>${i.address_detalied}</p><br/>
-          </c:forEach>
-          <hr/>
-
+        <c:forEach var="i" items="${address}">
+          <p style="border: red;margin-right: 10px"><input type="radio"  name="address" class="address" <c:if test="${i.address_default==1}">checked</c:if> value="${i.address_id}"/>${i.address_detalied}</p><br/>
+        </c:forEach>
+        <hr/>
         <script type="text/javascript">
           function address(){
-            open("address.jsp","_blank","width=850,height=600,left=320,top=100,resizable=no,scrollbars=no");
+            location.href="address.jsp";
           }
         </script>
-        <p onclick="address()" style="margin-bottom: 10px"><a href="#" onclick="address()">添加地址</a></p>
+        <p style="margin-bottom: 10px"><a href="#" onclick="address()">添加地址</a></p>
         <hr/>
       </div>
       <div class="cart-table-th">

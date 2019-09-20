@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet(name = "AddressServlet")
 public class AddressServlet extends HttpServlet {
@@ -52,7 +53,14 @@ public class AddressServlet extends HttpServlet {
             e.setEnter_id(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
             address1.setEnter(e);
             int ret = new AddressService().addAddress(address1);
-            response.sendRedirect("byShopping.jsp");
+            response.sendRedirect("AddressServlet?op=sel");
+        }else if("sel".equals(op)){
+            if(((Enter)(request.getSession().getAttribute("e")))!=null){
+                int id = ((Enter)(request.getSession().getAttribute("e"))).getEnter_id();
+                List<Address> addresses = new AddressService().getListAddress(id);
+                request.getSession().setAttribute("address",addresses);
+                response.sendRedirect("byShopping.jsp");
+            }
         }
         out.flush();
         out.close();
