@@ -26,10 +26,10 @@
           <div class="list-box">
             <c:forEach var="i" items="${comm}" varStatus="in">
               <dl>
-                <dt>${i.commodity_name}</dt>
+                <dt><a href="Commodity_infoServlet?op=group&pgax=commodity.jsp&paent_id=${i.commodity_id}">${i.commodity_name}</a></dt>
                       <%--                    如果我们的下表使用[进行表示下标]--%>
                     <c:forEach var="j" items="${small[in.index]}">
-                      <dd><a href="Commodity_infoServlet?op=group&pgax=commodity.jsp&sid=${j.commodity_small_id}">${j.commodity_small_name}</a></dd>
+                      <dd><a href="Commodity_infoServlet?op=group&pgax=commodity.jsp&comm_id=${j.commodity_small_id}">${j.commodity_small_name}</a></dd>
                     </c:forEach>
               </dl>
             </c:forEach>
