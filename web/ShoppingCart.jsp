@@ -21,7 +21,7 @@
       <h3>夏季清仓</h3>
       <p>宝宝被子、宝宝衣服3折起</p>
     </div>
-<%--    <form action="BuyServlet?op=add&comm=${comm.commodity_info_id}" method="post">--%>
+    <form action="BuyServlet?op=shopc" method="post">
     <div class="cart w1200">
       <div style="border: #3F3F3F">
         <p style="font-size: 18px">请选择地址</p>
@@ -124,7 +124,7 @@
         <div class="th th-chk">
           <div class="select-all">
             <div class="cart-checkbox">
-              <input class="check-all check" id="" name="select-all" type="hidden"  value="true">
+              <input class="check-all check" id=""  type="hidden" >
             </div>
             <label>&nbsp;&nbsp;已选<span  class="Selected-pieces">0</span>件</label>
               <input type="hidden" name="commSum" class="Selected-pieces" value="" />
@@ -142,7 +142,8 @@
         </div>
       </div>
     </div>
-<%--      </form>--%>
+    </div>
+      </form>
   </div>
 
 <script type="text/javascript">

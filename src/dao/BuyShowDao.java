@@ -12,8 +12,9 @@ public class BuyShowDao extends BaseDao implements BuyShowDaoImpl {
 
     @Override
     public int byShow(Buyshow buyshow) {
-        return this.executeUpdate("INSERT INTO buyshow VALUES(NULL,?,?,?,?,?)",new Object[]{
-                buyshow.getBuy().getBuy_id(),buyshow.getCommodity().getCommodity_info_id(),buyshow.getBuyshow_count(),buyshow.getBuyshow_price(),buyshow.getAbapt_id().getAbapt_id()
+//        INSERT INTO buyShow VALUES(NULL,?,?,?,?,?,?)
+        return this.executeUpdate("INSERT INTO buyshow VALUES(NULL,?,?,?,?,?,?)",new Object[]{
+                buyshow.getBuy().getBuy_id(),buyshow.getCommodity().getCommodity_info_id(),buyshow.getBuyshow_count(),buyshow.getBuyshow_price(),buyshow.getAbapt_id().getAbapt_id(),buyshow.getSum_money()
         });
     }
 
@@ -26,7 +27,7 @@ public class BuyShowDao extends BaseDao implements BuyShowDaoImpl {
         try {
             while (rs.next()){
                 Buyshow buyshow = new Buyshow();
-                buyshow.setBuyshow_price(rs.getInt("buyshow_price"));
+                buyshow.setBuyshow_price(rs.getInt("sum_money"));
                 Commodity_info commodity_info = new Commodity_infoService().commById(rs.getInt("buyshow_commodity _id"));
                 buyshow.setCommodity(commodity_info);
                 buyshow.setBuyshow_count(rs.getInt("buyshow_count"));

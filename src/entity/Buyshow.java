@@ -6,8 +6,9 @@ public class Buyshow {
 	private Buy buy;//订单编号(外键)
 	private Commodity_info commodity;//商品表（外键）
 	private int buyshow_count;//购买数量
-	private double buyshow_price;//购买价格
-	private Abapt abapt_id;
+	private double buyshow_price;//购买价格单价
+	private Abapt abapt_id;//产品使用类型
+	private double sum_money;//总价格
 	public int getBuyshow_id() {
 		return buyshow_id;
 	}
@@ -37,6 +38,14 @@ public class Buyshow {
 	}
 	public void setBuyshow_price(double buyshow_price) {
 		this.buyshow_price = buyshow_price;
+	}
+
+	public double getSum_money() {
+		return sum_money;
+	}
+
+	public void setSum_money(double sum_money) {
+		this.sum_money = sum_money;
 	}
 
 	public Abapt getAbapt_id() {

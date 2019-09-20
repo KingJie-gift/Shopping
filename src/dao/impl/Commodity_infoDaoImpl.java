@@ -32,5 +32,6 @@ public interface Commodity_infoDaoImpl {
 
 //    显示推荐的商品
     public List<Commodity_info> getTShopping(int id);
-
+//销售成功销量加1
+    public int rowById(int id);
 }

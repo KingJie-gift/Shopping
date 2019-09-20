@@ -254,6 +254,11 @@ public class Commodity_infoDao extends BaseDao implements Commodity_infoDaoImpl 
         return this.getList();
     }
 
+    @Override
+    public int rowById(int id) {
+        return this.executeUpdate("UPDATE commodity_info SET commodity_num=commodity_num+1  WHERE commodity_info_id= ?",new Object[]{id});
+    }
+
     private List<Commodity_info> getList() {
         List<Commodity_info> list = new ArrayList<>();
         try {

@@ -31,6 +31,10 @@ public class Commodity_infoService {
     }
 
     public List<Commodity_info> getTShopping(int id) {
+
         return new Commodity_infoDao().getTShopping(id);
+    }
+    public int rowById(int id) {
+        return new Commodity_infoDao().rowById(id);
     }
 }

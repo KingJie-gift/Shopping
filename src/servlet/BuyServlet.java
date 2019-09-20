@@ -52,7 +52,7 @@ public class BuyServlet extends HttpServlet {
             address1.setAddress_id(Integer.parseInt(address));
             buy.setAddress(address1);
             Commodity_info commodity = new Commodity_infoService().commById(Integer.parseInt(comm_id));
-            buy.setBug_money(commodity.getCommodity_info_money());
+            buy.setBug_money(Double.parseDouble(money));
             Enter enter = new Enter();
             enter.setEnter_id(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
             buy.setEnter(enter);
@@ -65,16 +65,72 @@ public class BuyServlet extends HttpServlet {
                 buy1.setBuy_id(row);
                 buyshow.setBuy(buy1);
                 buyshow.setBuyshow_count(Integer.parseInt(sum));
-                buyshow.setBuyshow_price(Double.parseDouble(money));
+                buyshow.setBuyshow_price(commodity.getCommodity_info_money());
+                buyshow.setSum_money(Double.parseDouble(money));
                 Abapt a = new Abapt();
                 a.setAbapt_id(Integer.parseInt(type));
                 buyshow.setAbapt_id(a);
                 ret = new ByShowService().byShow(buyshow);
                 if(ret>0){
+                    new Commodity_infoService().rowById(commodity.getCommodity_info_id());
                     request.getSession().removeAttribute("comm");
                     response.sendRedirect("index.jsp");
                 }
             }
+        }else if("shopc".equals(op)){
+            String[] sel = request.getParameterValues("select-all");
+
+//            String [] id = request.getParameterValues("id");
+//            购买的数量
+
+//            获取总价格
+            String money = request.getParameter("commMoney");
+
+
+            String[] num = request.getParameterValues("num");
+
+            String address = request.getParameter("address");
+
+
+
+            Buy buy = new Buy();
+            Address address1 = new Address();
+            address1.setAddress_id(Integer.parseInt(address));
+            buy.setAddress(address1);
+//            Commodity_info commodity = new Commodity_infoService().commById(Integer.parseInt(comm_id));
+            buy.setBug_money(Double.parseDouble(money));
+            Enter enter = new Enter();
+            enter.setEnter_id(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+            buy.setEnter(enter);
+            int ret = new BuyService().addByComm(buy);
+            System.out.println(ret);
+
+            for(int i = 0 ; i< sel.length ; i ++ ){
+                int row = new BuyService().selByShow();
+                Shopcart shopcart = new ShopcartService().shById(Integer.parseInt(sel[i]));
+                int comm_id = shopcart.getCommodity().getCommodity_info_id();
+                System.out.println(num[i]);
+                double price = shopcart.getCommodity().getCommodity_info_money();
+                double priceSum = price*Integer.parseInt(num[i]);
+                Buyshow buyshow = new Buyshow();
+                buyshow.setAbapt_id(shopcart.getAbapt());
+                buyshow.setSum_money(priceSum);
+                Buy buy1 = new Buy();
+                buy1.setBuy_id(row);
+                buyshow.setBuy(buy1);
+                buyshow.setBuyshow_count(Integer.parseInt(num[i]));
+                buyshow.setBuyshow_price(price);
+                buyshow.setCommodity(shopcart.getCommodity());
+                ret = new ByShowService().byShow(buyshow);
+                System.out.println(ret+"受影响的的行数");
+                ret = new ShopcartService().delShopcart(Integer.parseInt(sel[i]));
+                System.out.println(ret+"受影响的的行数");
+                new Commodity_infoService().rowById(shopcart.getCommodity().getCommodity_info_id());
+            }
+            request.getSession().removeAttribute("comm");
+            response.sendRedirect("index.jsp");
+
+
         }
         out.flush();
         out.close();
