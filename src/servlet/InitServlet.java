@@ -138,6 +138,9 @@ public class InitServlet extends HttpServlet {
             String page = request.getParameter("pg");
             request.getRequestDispatcher(page).forward(request,response);
 
+        }else if("del".equals(op)){
+            request.getSession().removeAttribute("comm");
+            response.sendRedirect("index.jsp");
         }
         out.flush();
         out.close();

@@ -19,3 +19,4 @@ public interface Commodity_smallDaoImpl  {
 //    更新
     public int addCommBy(String id, int row);
 }
+//https://github.com/KingJie-gift/Shopping.git

@@ -6,9 +6,44 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="">
+    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="abcdefg">
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/firstPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/title.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/firstPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/title.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/PhonePatt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/PhonePatt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/InitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/InitServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/PhonePatt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/PhonePatt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/util/Text.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/buytoday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/buytoday.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShow.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/collect.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/collect.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/commodity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/details.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/information.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/information.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/logup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/logup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/shopcart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/shopcart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/InitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/InitServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/util/PhonePatt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/util/PhonePatt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/util/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/util/Text.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/Commodity_smallDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/Commodity_smallDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/InitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/InitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/buytoday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/buytoday.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/byShopping.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/byShow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/byShow.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/collect.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/collect.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/commodity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/details.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/information.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/information.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/logup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/shopcart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/shopcart.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +58,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -33,9 +68,9 @@
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="2479744143@qq.com &lt;2479744143@qq.com&gt;" />
+        <option value="2" />
         <option value="master" />
         <option value="mather" />
-        <option value="2" />
         <option value="王国杰" />
       </list>
     </option>
@@ -306,7 +341,9 @@
       <workItem from="1568894518501" duration="7632000" />
       <workItem from="1568908135441" duration="243000" />
       <workItem from="1568912539860" duration="43000" />
-      <workItem from="1568912606175" duration="336000" />
+      <workItem from="1568912606175" duration="586000" />
+      <workItem from="1568939005519" duration="25000" />
+      <workItem from="1568940031756" duration="4481000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1568912788671</created>
@@ -315,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568912788671</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="测试">
+      <created>1568913042913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568913042913</updated>
+    </task>
+    <task id="LOCAL-00003" summary="abcdefg">
+      <created>1568913089453</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568913089453</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +387,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试" />
+    <MESSAGE value="abcdefg" />
+    <option name="LAST_COMMIT_MESSAGE" value="abcdefg" />
   </component>
 </project>

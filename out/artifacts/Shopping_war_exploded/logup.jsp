@@ -5,8 +5,10 @@
   Time: 10:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>用户注册</title>
@@ -15,156 +17,98 @@
     <script type="text/javascript" src="res/layui/layui.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <script src="js/jquery-1.12.4.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            var flag = true;
+            function checkPwd(){
+                var pwd = $("#pwd").val();
+                var rpwd = $("#rpwd").val();
+                if(pwd!=rpwd){
+                    $("#rpwdmsg").html("两次密码不相同")
+                    flag = false;
+                }
+                $("#rpwdmsg").html("&nbsp;&nbsp;")
+                flag = true;
+            }
+            $("#rpwd").blur(checkPwd);
+
+            //    发送验证手机号码是否重复
+            $("#phone").blur(function () {
+                var phone = $(this).val();
+                $.post("EnterServlet",{op:"patt",phone:phone},function (data) {
+                    if(data!="0"){
+                        $("#phonemsg").html("此手机号码已注册");
+                        flag = false;
+                    }
+                    $("#phonemsg").html("");
+                    flag = true;
+                })
+            })
+            $('[name="code_id"]').blur(function () {
+                var code = $(this).val();
+                $.post("EnterServlet",{op:"code_id",id:code},function (data) {
+                    if(data!="0"){
+                        $("#codemsg").html("已存在")
+                        flag = false;
+                    }else{
+                        $("#codemsg").html("可以使用")
+                        flag = true;
+                    }
+                })
+            });
+            //    发送手机号码
+            //    返回验证码的状态
+            $('[class="layui-btn"]').click(function () {
+                var phone = $('[name="phone"]').val();
+                $.post("EnterServlet",{op:"pattphone",phone:phone},function (data) {
+                },"text");
+            });
+            $('[name="pnum"]').blur(function () {
+                var stust = $(this).val();
+                $.post("EnterServlet",{op:"auth",stust:stust},function (data) {
+                    if(data=="true"){
+                        $("#phonemge").html("验证码正确");
+                        flag = true;
+                    }else {
+                        $("#phonemge").html("验证码不正确");
+                        flag = false;
+                    }
+                });
+            });
+            $("#form").submit(function () {
+                return flag;
+            });
+        })
+
+    </script>
+
+
+    <script type="text/javascript">
+        var countdown = 60;
+        function settime() {
+            var obj = document.getElementById("find");
+            if (countdown == 0) {
+                obj.removeAttribute("disabled");
+                obj.value = "获取验证码";
+                countdown = 60;
+                return;
+            } else {
+                obj.setAttribute("disabled", true);
+                obj.value = "重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function () {
+                    settime()
+                }
+                , 1000)
+        }
+    </script>
 </head>
 <body>
-<script src="js/jquery-1.12.4.js" type="text/javascript"></script>
-<script type="text/javascript">
-
-    $(function () {
-        var flag = true;
-        function checkPwd(){
-            var pwd = $("#pwd").val();
-            var rpwd = $("#rpwd").val();
-            if(pwd!=rpwd){
-                $("#rpwdmsg").html("两次密码不相同")
-                flag = false;
-            }
-            $("#rpwdmsg").html("&nbsp;&nbsp;")
-            flag = true;
-        }
-        $("#rpwd").blur(checkPwd);
-
-    //    发送验证手机号码是否重复
-        $("#phone").blur(function () {
-            var phone = $(this).val();
-            $.post("EnterServlet",{op:"patt",phone:phone},function (data) {
-                if(data!="0"){
-                    $("#phonemsg").html("此手机号码已注册");
-                    flag = false;
-                }
-                $("#phonemsg").html("");
-                flag = true;
-            })
-        })
-        $('[name="code_id"]').blur(function () {
-            var code = $(this).val();
-            $.post("EnterServlet",{op:"code_id",id:code},function (data) {
-                if(data!="0"){
-                    $("#codemsg").html("已存在")
-                    flag = false;
-                }else{
-                    $("#codemsg").html("可以使用")
-                    flag = true;
-                }
-            })
-        });
-    //    发送手机号码
-    //    返回验证码的状态
-       $('[class="layui-btn"]').click(function () {
-           var phone = $('[name="phone"]').val();
-           $.post("EnterServlet",{op:"pattphone",phone:phone},function (data) {
-           },"text");
-       });
-       $('[name="pnum"]').blur(function () {
-            var stust = $(this).val();
-           $.post("EnterServlet",{op:"auth",stust:stust},function (data) {
-               if(data=="true"){
-                   $("#phonemge").html("验证码正确");
-                   flag = true;
-               }else {
-                   $("#phonemge").html("验证码不正确");
-                   flag = false;
-               }
-           });
-       });
-       $("#form").submit(function () {
-           return flag;
-       });
-    })
-
-</script>
-
-
-<script type="text/javascript">
-    var countdown = 60;
-    function settime() {
-        var obj = document.getElementById("find");
-        if (countdown == 0) {
-            obj.removeAttribute("disabled");
-            obj.value = "获取验证码";
-            countdown = 60;
-            return;
-        } else {
-            obj.setAttribute("disabled", true);
-            obj.value = "重新发送(" + countdown + ")";
-            countdown--;
-        }
-        setTimeout(function () {
-                settime()
-            }
-            , 1000)
-    }
-</script>
-
-<script type="text/javascript">
-    $(function () {
-        layui.config({
-            base: 'res/static/js/util' //你存放新模块的目录，注意，不是layui的模块目录
-        }).use(['jquery','form'],function(){
-            var $ = layui.$,form = layui.form;
-        })
-    })
-</script>
-<div class="site-nav-bg">
-    <div class="site-nav w1200">
-        <p class="sn-back-home">
-            <i class="layui-icon layui-icon-home"></i>
-            <a href="#">首页</a>
-        </p>
-        <div class="sn-quick-menu">
-            <div class="login"><a href="login.jsp">登录</a></div>
-            <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="header">
-    <div class="headerLayout w1200">
-        <div class="headerCon">
-            <h1 class="mallLogo">
-                <a href="#" title="母婴商城">
-                    <img src="res/static/img/logo.png">
-                </a>
-            </h1>
-            <div class="mallSearch">
-                <form action="" class="layui-form" novalidate>
-                    <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">
-                        <i class="layui-icon layui-icon-search"></i>
-                    </button>
-                    <input type="hidden" name="" value="">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+<%@ include file="firstPage.jsp"%>
 <div class="content content-nav-base  login-content">
-    <div class="main-nav">
-        <div class="inner-cont0">
-            <div class="inner-cont1 w1200">
-                <div class="inner-cont2">
-                    <a href="commodity.html" class="active">所有商品</a>
-                    <a href="buytoday.html">今日团购</a>
-                    <a href="information.html">母婴资讯</a>
-                    <a href="about.html">关于我们</a>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="login-bg">
         <div class="login-cont w1200">
             <div class="form-box">
@@ -229,6 +173,5 @@
         <p class="coty">母婴商城版权所有 &copy; 2012-2020</p>
     </div>
 </div>
-
 </body>
 </html>

@@ -1,6 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-
-<!DOCTYPE jsp>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,58 +12,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
 <body>
-
-  <div class="site-nav-bg">
-    <div class="site-nav w1200">
-      <p class="sn-back-home">
-        <i class="layui-icon layui-icon-home"></i>
-        <a href="index.jsp">首页</a>
-      </p>
-      <div class="sn-quick-menu">
-      	<div class="login"><a href="logup.jsp">注册</a></div>
-        <div class="login"><a href="login.jsp">登录</a></div>
-        <div class="sp-cart"><a href="shopcart.jsp">购物车</a><span>2</span></div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="header">
-    <div class="headerLayout w1200">
-      <div class="headerCon">
-        <h1 class="mallLogo">
-          <a href="#" title="母婴商城">
-            <img src="res/static/img/logo.png" style="margin-top: 40px">
-          </a>
-        </h1>
-        <div class="mallSearch">
-          <form action="" class="layui-form" novalidate>
-            <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">
-                <i class="layui-icon layui-icon-search"></i>
-            </button>
-            <input type="hidden" name="" value="">
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+<%@ include file="firstPage.jsp"%>
   <div class="content content-nav-base  login-content">
-    <div class="main-nav">
-      <div class="inner-cont0">
-        <div class="inner-cont1 w1200">
-          <div class="inner-cont2">
-            <a href="commodity.jsp" class="active">所有商品</a>
-            <a href="buytoday.jsp">今日团购</a>
-            <a href="information.jsp">母婴资讯</a>
-            <a href="about.jsp">关于我们</a>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="login-bg">
       <div class="login-cont w1200">
         <div class="form-boxs">
@@ -79,7 +29,7 @@
               <div class="layui-inline veri-code">
                 <div class="layui-input-inline">
                   <input id="pnum" type="password" name="pwd" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
-                  
+
                 </div>
               </div>
             </div>
@@ -104,7 +54,7 @@
         </p>
       </div>
     </div>
-    <div class="mod_help w1200">                                     
+    <div class="mod_help w1200">
       <p>
         <a href="javascript:;">关于我们</a>
         <span>|</span>
@@ -120,12 +70,6 @@
     </div>
   </div>
   <script type="text/javascript">
-   layui.config({
-      base: 'res/static/js/util' //你存放新模块的目录，注意，不是layui的模块目录
-    }).use(['jquery','form'],function(){
-          var $ = layui.$,form = layui.form;
-
-
         $("#find").click(function() {
             if(!/^1\d{10}$/.test($("#phone").val())){
               layer.msg("请输入正确的手机号");
@@ -137,7 +81,7 @@
                 url:"json/login.json",
                 dataType:"json",//返回的
                 success:function(data) {
-                    
+
                     if(data.result){
                         $("#find").addClass(" layui-btn-disabled");
                         $('#find').attr('disabled',"true");
@@ -150,27 +94,25 @@
                 error:function(msg) {
                     console.log(msg);
                 }
-            }); 
+            });
         })
-        var countdown=60; 
-        function settime(obj) { 
-        if (countdown == 0) { 
-            obj.removeAttribute("disabled"); 
+        var countdown=60;
+        function settime(obj) {
+        if (countdown == 0) {
+            obj.removeAttribute("disabled");
             obj.classList.remove("layui-btn-disabled")
-            obj.value="获取验证码"; 
-            countdown = 60; 
+            obj.value="获取验证码";
+            countdown = 60;
             return;
-        } else { 
-            
-            obj.value="重新发送(" + countdown + ")"; 
-            countdown--; 
-        } 
-        setTimeout(function() { 
-            settime(obj) }
-            ,1000) 
-        }
-    })
-  </script>
+        } else {
 
+            obj.value="重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function() {
+            settime(obj) }
+            ,1000)
+        }
+  </script>
 </body>
 </html>

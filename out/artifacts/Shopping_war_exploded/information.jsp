@@ -19,56 +19,11 @@
 </head>
 <body>
 
-  <div class="site-nav-bg">
-    <div class="site-nav w1200">
-      <p class="sn-back-home">
-        <i class="layui-icon layui-icon-home"></i>
-        <a href="index.jsp">首页</a>
-      </p>
-      <div class="sn-quick-menu">
-        <div class="login"><a href="logup.jsp">登录</a></div>
-        <div class="sp-cart"><a href="shopcart.jsp">购物车</a><span>2</span></div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="header">
-    <div class="headerLayout w1200">
-      <div class="headerCon">
-        <h1 class="mallLogo">
-          <a href="#" title="母婴商城">
-            <img src="res/static/img/logo.png">
-          </a>
-        </h1>
-        <div class="mallSearch">
-          <form action="" class="layui-form" novalidate>
-            <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">
-                <i class="layui-icon layui-icon-search"></i>
-            </button>
-            <input type="hidden" name="" value="">
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+<%@ include file="firstPage.jsp"%>
 
 
   <div class="content content-nav-base information-content">
-    <div class="main-nav">
-      <div class="inner-cont0">
-        <div class="inner-cont1 w1200">
-          <div class="inner-cont2">
-            <a href="commodity.jsp">所有商品</a>
-            <a href="buytoday.jsp">今日团购</a>
-            <a href="information.jsp"  class="active">母婴资讯</a>
-            <a href="about.jsp">关于我们</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%@ include file="title.jsp"%>
     <div class="info-list-box">
       <div class="info-list w1200">
         <div class="item-box layui-clear" id="list-cont">
