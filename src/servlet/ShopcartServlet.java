@@ -52,12 +52,16 @@ public class ShopcartServlet extends HttpServlet {
                 response.sendRedirect("ShopcartServlet?op=show");
             }
         } else if ("car".equals(op)) {
+            String name = request.getParameter("xx");
+            if("5".equals(name)){
+                request.getSession().removeAttribute("address");
+            }else {
 //            这个是选中的编号
-            String[] sel = request.getParameterValues("select-all");
+                String[] sel = request.getParameterValues("select-all");
 
 //            String [] id = request.getParameterValues("id");
 //            购买的数量
-            String[] num = request.getParameterValues("num");
+                String[] num = request.getParameterValues("num");
 //            购买的商品的类型
 //            String [] bapt = request.getParameterValues("bapt");
 //            显示商品的下表
@@ -66,18 +70,18 @@ public class ShopcartServlet extends HttpServlet {
 //            String [] comm = request.getParameterValues("comm_id");
 //            通过编号获取购买的信息
 
-            System.out.println(sel.length + "\t" + num.length);
-            List<Shopcart> shopcarts = new ArrayList<>();
-            for (int i = 0; i < sel.length; i++) {
-                Shopcart shopcart = new ShopcartService().shById(Integer.parseInt(sel[i]));
-                shopcarts.add(shopcart);
-            }
-            request.getSession().setAttribute("shop_by", shopcarts);
-            request.getSession().setAttribute("num", num);
+                System.out.println(sel.length + "\t" + num.length);
+                List<Shopcart> shopcarts = new ArrayList<>();
+                for (int i = 0; i < sel.length; i++) {
+                    Shopcart shopcart = new ShopcartService().shById(Integer.parseInt(sel[i]));
+                    shopcarts.add(shopcart);
+                }
+                request.getSession().setAttribute("shop_by", shopcarts);
+                request.getSession().setAttribute("num", num);
 //            Commodity_info comm = new Commodity_infoService().commById(Integer.parseInt(sid));
 ////            加载地址
 //            request.getSession().setAttribute("comm", comm);
-
+            }
             int id = ((Enter) (request.getSession().getAttribute("e"))).getEnter_id();
             List<Address> addresses = new AddressService().getListAddress(id);
             request.getSession().setAttribute("address", addresses);

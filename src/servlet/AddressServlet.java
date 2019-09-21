@@ -53,7 +53,13 @@ public class AddressServlet extends HttpServlet {
             e.setEnter_id(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
             address1.setEnter(e);
             int ret = new AddressService().addAddress(address1);
-            response.sendRedirect("AddressServlet?op=sel");
+            String ye = request.getParameter("page");
+            if(ye.equals("address")){
+                response.sendRedirect("AddressServlet?op=sel");
+            }else{
+                response.sendRedirect("AddressServlet?op=gadd");
+            }
+
         }else if("sel".equals(op)){
             if(((Enter)(request.getSession().getAttribute("e")))!=null){
                 int id = ((Enter)(request.getSession().getAttribute("e"))).getEnter_id();
@@ -61,6 +67,8 @@ public class AddressServlet extends HttpServlet {
                 request.getSession().setAttribute("address",addresses);
                 response.sendRedirect("byShopping.jsp");
             }
+        }else if(op.equals("gadd")){
+            response.sendRedirect("ShopcartServlet?op=car&xx=5");
         }
         out.flush();
         out.close();

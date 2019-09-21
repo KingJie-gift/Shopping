@@ -21,6 +21,24 @@
       <h3>夏季清仓</h3>
       <p>宝宝被子、宝宝衣服3折起</p>
     </div>
+    <script type="text/javascript">
+      $(function () {
+        $("form").submit(function () {
+          var obj = document.getElementsByName("address");
+          var flags = false;
+          for(var i=0; i<obj.length; i ++){
+            if(obj[i].checked==true){
+              flags = true;
+            }
+          }
+          if (flags == false)
+          {
+            alert("对不起，请选择地址")
+            return false;
+          }
+        })
+      })
+    </script>
     <form action="BuyServlet?op=add&comm=${comm.commodity_info_id}" method="post">
     <div class="cart w1200">
       <div style="border: #3F3F3F">
@@ -33,6 +51,8 @@
         <script type="text/javascript">
           function address(){
             location.href="address.jsp";
+            <c:remove  var="addressPage"  scope="session"  />
+            <c:set  var="addressPage"  value="address"  scope="session"  />
           }
         </script>
         <p style="margin-bottom: 10px"><a href="#" onclick="address()">添加地址</a></p>

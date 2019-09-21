@@ -8,7 +8,7 @@
 </head>
 <body style="background:url(content/background.jpg)">
 <div>
-    <form method="post" action="AddressServlet?op=add" style="margin-left: 230px" >
+    <form method="post" action="AddressServlet?op=add&page=${addressPage}" style="margin-left: 230px" >
         <p>姓名<input name="name" type="text" /></p>
         <div data-toggle="distpicker" data-autoselect="3" data-province="江苏省">
             <select name="city"></select>

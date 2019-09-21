@@ -8,7 +8,18 @@
   <component name="ChangeListManager">
     <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/commodity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/ShoppingCart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/ShoppingCart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/AddressServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/AddressServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/ShopcartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/ShopcartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/address.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/AddressServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/AddressServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/ShopcartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/ShopcartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/AddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/AddressServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/ShopcartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/ShopcartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ShoppingCart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ShoppingCart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/address.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/byShopping.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +71,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,18 +86,18 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Shopping\web" />
+      <recent name="C:\Users\Administrator\Shopping\web\WEB-INF\lib" />
+      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded\content" />
+      <recent name="C:\Users\Administrator\Shopping\web\content" />
+      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Shopping\web" />
       <recent name="C:\Users\Administrator\Shopping\content" />
       <recent name="C:\Users\Administrator\Shopping\web\html" />
       <recent name="C:\Users\Administrator\Shopping\web\html\json" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Shopping\web\WEB-INF\lib" />
-      <recent name="C:\Users\Administrator\Shopping\web" />
-      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded\content" />
-      <recent name="C:\Users\Administrator\Shopping\web\content" />
-      <recent name="C:\Users\Administrator\Shopping\out\artifacts\Shopping_war_exploded" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -373,7 +384,7 @@
       <workItem from="1568912606175" duration="586000" />
       <workItem from="1568939005519" duration="25000" />
       <workItem from="1568940031756" duration="26901000" />
-      <workItem from="1568983936972" duration="185000" />
+      <workItem from="1568983936972" duration="4834000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1568912788671</created>
@@ -417,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568972383744</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ok">
+      <created>1568984323812</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1568984323812</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
