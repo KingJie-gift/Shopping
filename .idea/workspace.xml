@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="" />
+    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/Commodity_infoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/Commodity_infoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/Commodity_infoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/Commodity_infoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/Commodity_infoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/Commodity_infoServlet.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,6 +378,7 @@
       <workItem from="1568983936972" duration="4834000" />
       <workItem from="1569025884329" duration="80000" />
       <workItem from="1569029856089" duration="589000" />
+      <workItem from="1569034350920" duration="618000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1568912788671</created>

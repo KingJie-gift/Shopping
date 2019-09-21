@@ -167,7 +167,10 @@ public class Commodity_infoServlet extends HttpServlet {
             Commodity_info comm = new Commodity_infoService().commById(Integer.parseInt(sid));
 
             String details = comm.getCommodity_show();
-
+            System.out.println(details);
+            if(details==null||details.equals("")){
+                details = "";
+            }
             String [] det = details.split("&nbsp;");
 
             List<String> sb = new ArrayList<>();
