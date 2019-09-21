@@ -6,21 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/ShoppingCart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/ShoppingCart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/AddressServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/AddressServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/ShopcartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/WEB-INF/classes/servlet/ShopcartServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/address.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Shopping_war_exploded/byShopping.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/AddressServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/AddressServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shopping/servlet/ShopcartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shopping/servlet/ShopcartServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/AddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/AddressServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/ShopcartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/ShopcartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ShoppingCart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ShoppingCart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/address.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/byShopping.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/byShopping.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="db040fb4-f862-4298-a2c2-24ac5f1171e5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,6 +371,7 @@
       <workItem from="1568939005519" duration="25000" />
       <workItem from="1568940031756" duration="26901000" />
       <workItem from="1568983936972" duration="4834000" />
+      <workItem from="1569025884329" duration="80000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1568912788671</created>
@@ -435,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568984323812</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ok">
+      <created>1569025941700</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569025941700</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
