@@ -77,6 +77,27 @@ public class EnterServlet extends HttpServlet {
             }else{
                 out.print("<script>alert('用户名或密码错误！');location.href='login.jsp';</script>");
             }
+        }else if("update".equals(op)){
+            String user = request.getParameter("user");
+            String pwd = request.getParameter("sex");
+            String phone = request.getParameter("phone");
+            String name = request.getParameter("name");
+            System.out.println(user+pwd+phone+name);
+            Enter enter = new Enter();
+            enter.setEnter_id(((Enter) (request.getSession().getAttribute("e"))).getEnter_id());
+            enter.setEnter_name(user);
+            enter.setEnter_truename(name);
+            enter.setEnter_telephone(phone);
+            enter.setEnter_gender(pwd);
+            int ret = new EnterService().update(enter);
+            if(ret>0){
+                if((Enter)(request.getSession().getAttribute("e"))!=null){
+                    request.getSession().removeAttribute("enter");
+                    Enter e = new EnterService().showBy(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+                    request.getSession().setAttribute("enter",e);
+                }
+                out.print("<script>alert('保存成功');location.href='userInfo.jsp'</script>");
+            }
         }
         out.flush();
         out.close();

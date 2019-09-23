@@ -17,4 +17,9 @@ public interface EnterDaoImpl {
     //判断手机号是否重复
     public int codeId(String id);
 
+//    查询
+    public Enter showBy(int id);
+
+//    更新
+    public int update(Enter enter);
 }

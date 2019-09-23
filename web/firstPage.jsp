@@ -24,7 +24,7 @@
             <div class="login"><a href="logup.jsp">注册</a></div>
             <c:choose>
                 <c:when test="${e==null}"><div class="login"><a href="login.jsp">登录</a></div></c:when>
-                <c:when test="${e!=null}">欢迎你，<span style="color: red">${e.enter_name}</span>
+                <c:when test="${e!=null}">欢迎你，<a href="userInfo.jsp"><span style="color: red">${e.enter_name} </span></a>
                     <div class="sp-cart"><a href="shopcart.jsp">购物车</a><span>${shop.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <div class="sp-cart"><a href="collect.jsp">收藏</a><span>${collects.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <div class="sp-cart"><a href="byShow.jsp">已购买</a><span>${buy.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>

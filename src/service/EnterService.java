@@ -18,4 +18,8 @@ public class EnterService {
 	public int codeId(String id) {
 		return new EnterDao().codeId(id);
 	}
+	public Enter showBy(int id) {return new EnterDao().showBy(id);}
+	public int update(Enter enter) {
+		return new EnterDao().update(enter);
+	}
 }

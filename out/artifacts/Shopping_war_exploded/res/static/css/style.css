@@ -1,0 +1,9 @@
+body {
+  height: 100vh;
+  background-color: #4DD0E1;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: auto;
+}

@@ -13,26 +13,7 @@ public class EnterDao extends BaseDao implements EnterDaoImpl {
 		String sql="SELECT * FROM `enter`WHERE enter_telephone=? AND enter_password=?";
 		Object[] param={enter_telephone,enter_password};
 		this.executeQuery(sql,param);
-		try {
-			if(rs.next()){
-				e=new Enter();
-				e.setEnter_id(rs.getInt("enter_id"));
-				e.setEnter_name(rs.getString("enter_name"));
-				e.setEnter_truename(rs.getString("enter_truename"));
-				e.setEnter_password(rs.getString("enter_password"));
-				e.setEnter_telephone(rs.getString("enter_telephone"));
-				e.setEnter_card_id(rs.getString("enter_card_id"));
-				e.setEnter_gender(rs.getString("enter_gender"));
-				e.setEnter_url(rs.getString("enter_url"));
-				e.setEnter_type(rs.getInt("enter_type"));
-			}
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}finally{
-			closeAll();
-		}
-		return e;
+		return getEnter(e);
 	}
 
 
@@ -73,6 +54,41 @@ public class EnterDao extends BaseDao implements EnterDaoImpl {
 			this.closeAll();
 		}
 		return count;
+	}
+
+	@Override
+	public Enter showBy(int id) {
+		this.executeQuery("SELECT *FROM enter WHERE  enter_id = ?",new Object[]{id});
+		Enter e = null;
+		return getEnter(e);
+	}
+
+	@Override
+	public int update(Enter enter) {
+		return this.executeUpdate("UPDATE `enter` set  enter_name = ? , enter_truename = ? ,enter_telephone=? ,enter_gender = ? WHERE enter_id = ?",new Object[]{enter.getEnter_name(),enter.getEnter_truename(),enter.getEnter_telephone(),enter.getEnter_gender(),enter.getEnter_id()});
+	}
+
+	private Enter getEnter(Enter e) {
+		try {
+			if(rs.next()){
+				e=new Enter();
+				e.setEnter_id(rs.getInt("enter_id"));
+				e.setEnter_name(rs.getString("enter_name"));
+				e.setEnter_truename(rs.getString("enter_truename"));
+				e.setEnter_password(rs.getString("enter_password"));
+				e.setEnter_telephone(rs.getString("enter_telephone"));
+				e.setEnter_card_id(rs.getString("enter_card_id"));
+				e.setEnter_gender(rs.getString("enter_gender"));
+				e.setEnter_url(rs.getString("enter_url"));
+				e.setEnter_type(rs.getInt("enter_type"));
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}finally{
+			closeAll();
+		}
+		return e;
 	}
 
 }

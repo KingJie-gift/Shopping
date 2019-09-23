@@ -116,6 +116,18 @@ public class InitServlet extends HttpServlet {
                 request.getSession().setAttribute("selAddress",selAddresses);
             }
 
+//            保存用户信息
+            if((Enter)(request.getSession().getAttribute("e"))!=null){
+                List<Address> selAddresses = new AddressService().getListAddress(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+                request.getSession().setAttribute("selAddress",selAddresses);
+            }
+
+//            加载用户信息
+            if((Enter)(request.getSession().getAttribute("e"))!=null){
+                Enter e = new EnterService().showBy(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+                request.getSession().setAttribute("enter",e);
+            }
+
 
 
 //            request.getSession().setAttribute("");

@@ -9,6 +9,9 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="img/favicon.ico" rel="icon stylesheet bookmark shortcut" type="image/x-icon"/>
+    <link rel="shortcut icon stylesheet" href="img/favicon.ico">
+    <link rel="bookmark stylesheet" href="img/favicon.ico">
 </head>
 <body>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
