@@ -15,4 +15,13 @@ public class AddressService {
     public int addressUpdate() {
         return new AddressDao().addressUpdate();
     }
+    public int getDelete(int id){
+        return new AddressDao().getDelete(id);
+    }
+    public Address getAddressBuyId(int id){
+        return new AddressDao().getAddressBuyId(id);
+    }
+    public int getUpdate(Address a) {
+        return new AddressDao().getUpdate(a);
+    }
 }

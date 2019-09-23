@@ -214,7 +214,6 @@ public class Commodity_infoServlet extends HttpServlet {
             request.getRequestDispatcher("details.jsp").forward(request,response);
         }else if("small".equals(op)){
 //            分类显示信息
-
         }
         out.flush();
         out.close();

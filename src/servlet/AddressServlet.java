@@ -67,11 +67,47 @@ public class AddressServlet extends HttpServlet {
                 request.getSession().setAttribute("address",addresses);
                 response.sendRedirect("byShopping.jsp");
             }
-        }else if(op.equals("gadd")){
+        }else if("gadd".equals(op)){
             response.sendRedirect("ShopcartServlet?op=car&xx=5");
+        }else if("del".equals(op)){
+            int id = Integer.parseInt(request.getParameter("sid"));
+            int ret = new AddressService().getDelete(id);
+            address(request, response, ret);
+        }else if("update".equals(op)) {
+//            根据编号查询addrss地址信息
+            Address address = new AddressService().getAddressBuyId(Integer.parseInt(request.getParameter("sid")));
+            request.setAttribute("address",address);
+            request.getRequestDispatcher("updateAddress.jsp").forward(request,response);
+        }else if("updateAddress".equals(op)){
+            String name = request.getParameter("name");
+            String phone = request.getParameter("phone");
+            String address = request.getParameter("address");
+            String code = request.getParameter("code");
+            Address address1 = new Address();
+            address1.setAddress_postal(code);
+            address1.setAddress_detalied(address);
+            address1.setAddress_telephone(phone);
+            address1.setAddress_name(name);
+            Enter e = new Enter();
+            e.setEnter_id(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+            address1.setEnter(e);
+            address1.setAddress_id(Integer.parseInt(request.getParameter("sid")));
+            int ret = new AddressService().getUpdate(address1);
+            address(request, response, ret);
         }
         out.flush();
         out.close();
+    }
+
+    private void address(HttpServletRequest request, HttpServletResponse response, int ret) throws IOException {
+        if(ret>0) {
+            if ((Enter) (request.getSession().getAttribute("e")) != null) {
+                request.getSession().removeAttribute("selAddress");
+                List<Address> selAddresses = new AddressService().getListAddress(((Enter) (request.getSession().getAttribute("e"))).getEnter_id());
+                request.getSession().setAttribute("selAddress", selAddresses);
+            }
+            response.sendRedirect("showAddress.jsp");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

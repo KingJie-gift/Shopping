@@ -5,6 +5,9 @@
     <title>Title</title>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/distpicker/2.0.3/distpicker.js"></script>
+    <link href="img/favicon.ico" rel="icon stylesheet bookmark shortcut" type="image/x-icon"/>
+    <link rel="shortcut icon stylesheet" href="img/favicon.ico">
+    <link rel="bookmark stylesheet" href="img/favicon.ico">
 </head>
 <body style="background:url(content/background.jpg)">
 <div>

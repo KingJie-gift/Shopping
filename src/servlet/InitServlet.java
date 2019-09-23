@@ -111,6 +111,11 @@ public class InitServlet extends HttpServlet {
             }
 //            显示有多个是收藏
 
+            if((Enter)(request.getSession().getAttribute("e"))!=null){
+                List<Address> selAddresses = new AddressService().getListAddress(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+                request.getSession().setAttribute("selAddress",selAddresses);
+            }
+
 
 
 //            request.getSession().setAttribute("");

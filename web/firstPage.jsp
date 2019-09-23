@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <title>Title</title>
 </head>
 <body>
@@ -27,6 +28,7 @@
                     <div class="sp-cart"><a href="shopcart.jsp">购物车</a><span>${shop.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <div class="sp-cart"><a href="collect.jsp">收藏</a><span>${collects.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <div class="sp-cart"><a href="byShow.jsp">已购买</a><span>${buy.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="sp-cart"><a href="showAddress.jsp">地址</a><span>${selAddress.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </c:when>
             </c:choose>
 

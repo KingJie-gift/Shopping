@@ -67,4 +67,17 @@ public class AddressDao extends BaseDao implements AddressDaoImpl {
         }
         return address;
     }
+
+    public int getDelete(int id){
+        String sql="DELETE FROM address WHERE address_id=?";
+        Object[] para={id};
+        return executeUpdate(sql, para);
+    }
+
+    @Override
+    public int getUpdate(Address a) {
+        String sql="UPDATE address SET address_detalied=?,address_postal=?,address_name=?,address_telephone=? WHERE address_id=?";
+        Object []para={a.getAddress_detalied(),a.getAddress_postal(),a.getAddress_name(),a.getAddress_telephone(),a.getAddress_id()};
+        return executeUpdate(sql, para);
+    }
 }

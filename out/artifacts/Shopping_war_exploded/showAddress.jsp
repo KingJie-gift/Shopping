@@ -9,9 +9,6 @@
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-  <link href="img/favicon.ico" rel="icon stylesheet bookmark shortcut" type="image/x-icon"/>
-  <link rel="shortcut icon stylesheet" href="img/favicon.ico">
-  <link rel="bookmark stylesheet" href="img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
@@ -19,9 +16,7 @@
 
 <%@ include file="firstPage.jsp"%>
 
-
   <div class="content content-nav-base shopcart-content">
-    <%@ include file="title.jsp"%>
     <div class="banner-bg w1200">
       <h3>夏季清仓</h3>
       <p>宝宝被子、宝宝衣服3折起</p>
@@ -33,115 +28,84 @@
             <div class="cart-checkbox">
               <input class="check-all check" id="allCheckked" type="hidden" value="true">
             </div>
-          <label>&nbsp;</label>
+            <label>&nbsp;&nbsp;</label>
           </div>
         </div>
         <div class="th th-item">
           <div class="th-inner">
-            商品
+            地址
           </div>
         </div>
         <div class="th th-price">
           <div class="th-inner">
-            总价格
+            姓名
           </div>
         </div>
         <div class="th th-amount">
           <div class="th-inner">
-            数量
+            手机
           </div>
         </div>
         <div class="th th-sum">
           <div class="th-inner">
-            地址
+            编号
           </div>
         </div>
         <div class="th th-op">
           <div class="th-inner">
-            状态
+            操作
           </div>
-        </div>  
+        </div>
       </div>
       <div class="OrderList">
         <div class="order-content" id="list-cont">
-          <c:forEach var="i" items="${buy}">
+          <c:forEach var="i" items="${selAddress}" varStatus="in">
             <ul class="item-content layui-clear">
               <li class="th th-chk">
                 <div class="select-all">
                   <div class="cart-checkbox">
-                    <input class="CheckBoxShop check"  type="hidden" num="all" name="select-all" value="true">
+<%--                    <input class="CheckBoxShop check"  type="hidden" num="all" name="select-all" value="${i.shopcart_id}">--%>
+<%--                    <input type="hidden" value="${i.shopcart_id}" name="comm_id" />--%>
                   </div>
                 </div>
               </li>
               <li class="th th-item">
                 <div class="item-cont">
-                  <a href="javascript:;"><img src="res/static/img/paging_img1.jpg" alt=""></a>
                   <div class="text">
-                    <div class="title">${i.commodity.commodity_info_name}</div>
-                    <p>${i.abapt_id.abapt_name}</p>
+                    <div class="title">${i.address_detalied}</div>
+<%--                    <p>${i.abapt.abapt_name}</p>--%>
+<%--                    <input type="hidden" value="${i.abapt.abapt_id}" name="bapt"/>--%>
+<%--                    <input type="hidden" value="${in.index}" name="index"/>--%>
                   </div>
                 </div>
               </li>
               <li class="th th-price">
-                <span class="th-su">${i.buyshow_price}</span>
+                <span class="th-su">${i.address_name}</span>
               </li>
               <li class="th th-amount">
-                <div class="box-btnx layui-clear">
-                  <div  style="margin-right: 10px"></div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<input class="Quantity-input" type="" name="" value="${i.buyshow_count}" disabled="disabled">
+                <div class="box-btn layui-clear" id="xx">
+                  <input class="Quantity-input" type="text" value="${i.address_telephone}" name="num" readonly>
+
+
+                    <%--                    <input type="text" name='commMoney' value="" />--%>
                 </div>
               </li>
               <li class="th th-sum">
-                <span class="spanx">${i.buy.address.address_detalied}</span>
+                <span class="sum">${i.address_postal}</span>
               </li>
-              <li class="th th-op" style="color: red;font-size: 18px">
-                <c:choose>
-                  <c:when test="${i.buy.bug_type==0}">
-                    未发货
-                  </c:when>
-                  <c:when test="${i.buy.bug_type==1}">
-                    发货
-                  </c:when>
-                  <c:when test="${i.buy.bug_type==2}">
-                    派送中
-                  </c:when>
-                  <c:when test="${i.buy.bug_type==3}">
-                    未签收
-                  </c:when>
-                  <c:when test="${i.buy.bug_type==4}">
-                    签收
-                  </c:when>
-                </c:choose>
-
+              <li class="th th-op">
+                <a href="AddressServlet?op=del&sid=${i.address_id}">删除</a>
+                <a href="AddressServlet?op=update&sid=${i.address_id}">修改</a>
               </li>
             </ul>
           </c:forEach>
         </div>
-      </div>
     </div>
-  </div>
-
 <script type="text/javascript">
   layui.config({
     base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
   }).use(['mm','jquery','element','car'],function(){
     var mm = layui.mm,$ = layui.$,element = layui.element,car = layui.car;
-    
-    // 模版导入数据
-    // var jsp = demo.innerjsp,
-    // listCont = document.getElementById('list-cont');
-    // mm.request({
-    //   url: 'json/shopcart.json',
-    //   success : function(res){
-    //     listCont.innerjsp = mm.renderjsp(jsp,res)
-    //     element.render();
-    //     car.init()
-    //   },
-    //   error: function(res){
-    //     console.log(res);
-    //   }
-    // })
-    // 
     car.init();
 });
 </script>
