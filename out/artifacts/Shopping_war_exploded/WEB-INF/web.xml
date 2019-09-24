@@ -3,13 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <context-param>
-        <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>/WEB-INF/pom.xml</param-value>
-    </context-param>
     <servlet>
         <servlet-name>EnterServlet</servlet-name>
-        <servlet-class>servlet.EnterServlet</servlet-class>
+        <servlet-class>servlet.EnterServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EnterServlet</servlet-name>
@@ -17,7 +13,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>IndexServlet</servlet-name>
-        <servlet-class>servlet.IndexServlet</servlet-class>
+        <servlet-class>servlet.IndexServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
@@ -25,7 +21,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Commodity_infoServlet</servlet-name>
-        <servlet-class>servlet.Commodity_infoServlet</servlet-class>
+        <servlet-class>servlet.Commodity_infoServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Commodity_infoServlet</servlet-name>
@@ -33,7 +29,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>InitServlet</servlet-name>
-        <servlet-class>servlet.InitServlet</servlet-class>
+        <servlet-class>servlet.InitServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>InitServlet</servlet-name>
@@ -41,7 +37,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>ShopcartServlet</servlet-name>
-        <servlet-class>servlet.ShopcartServlet</servlet-class>
+        <servlet-class>servlet.ShopcartServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShopcartServlet</servlet-name>
@@ -49,7 +45,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>CollectServlet</servlet-name>
-        <servlet-class>servlet.CollectServlet</servlet-class>
+        <servlet-class>servlet.CollectServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CollectServlet</servlet-name>
@@ -57,7 +53,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>BuyServlet</servlet-name>
-        <servlet-class>servlet.BuyServlet</servlet-class>
+        <servlet-class>servlet.BuyServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>BuyServlet</servlet-name>
@@ -65,7 +61,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>AddressServlet</servlet-name>
-        <servlet-class>servlet.AddressServlet</servlet-class>
+        <servlet-class>servlet.AddressServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddressServlet</servlet-name>
@@ -81,10 +77,107 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>CounselingServlet</servlet-name>
-        <servlet-class>servlet.CounselingServlet</servlet-class>
+        <servlet-class>servlet.CounselingServletw</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CounselingServlet</servlet-name>
         <url-pattern>/CounselingServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EnterServletL</servlet-name>
+        <servlet-class>servlet.EnterServletL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnterServletL</servlet-name>
+        <url-pattern>/EnterServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>IndexServletL</servlet-name>
+        <servlet-class>servlet.IndexServletL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexServletL</servlet-name>
+        <url-pattern>/IndexServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Commodity_infoServletL</servlet-name>
+        <servlet-class>servlet.Commodity_infoServletL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Commodity_infoServletL</servlet-name>
+        <url-pattern>/Commodity_infoServletL</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InitServletL</servlet-name>
+        <servlet-class>servlet.InitServletL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitServletL</servlet-name>
+        <url-pattern>/InitServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ShopcartServletL</servlet-name>
+        <servlet-class>servlet.ShopcartServletL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShopcartServletL</servlet-name>
+        <url-pattern>/ShopcartServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CollectServletL</servlet-name>
+        <servlet-class>servlet.CollectServletL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CollectServletL</servlet-name>
+        <url-pattern>/CollectServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BrandServletL</servlet-name>
+        <servlet-class>servlet.BrandServletL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BrandServletL</servlet-name>
+        <url-pattern>/BrandServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Commodity_smallServletL</servlet-name>
+        <servlet-class>servlet.Commodity_smallServletL</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Commodity_smallServletL</servlet-name>
+        <url-pattern>/Commodity_smallServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HomeServletL</servlet-name>
+        <servlet-class>servlet.HomeServletL</servlet-class>
+    </servlet>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>Commodity_infoServlet2L</servlet-name>
+        <servlet-class>servlet.Commodity_infoServlet2L</servlet-class>
+    </servlet>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>addSeervletL</servlet-name>
+        <servlet-class>servlet.addSeervletL</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>HomeServletL</servlet-name>
+        <url-pattern>/HomeServletL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Commodity_infoServlet2L</servlet-name>
+        <url-pattern>/Commodity_infoServlet2L</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addSeervletL</servlet-name>
+        <url-pattern>/addSeervletL</url-pattern>
     </servlet-mapping>
 </web-app>

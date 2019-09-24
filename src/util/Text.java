@@ -1,21 +1,12 @@
 package util;
 
-import dao.BaseDao;
-import dao.BrandDao;
-import dao.CommodityDao;
-import dao.Commodity_smallDao;
-import entity.*;
-import org.omg.CORBA.INTERNAL;
-import service.Commodity_infoService;
-import service.Show_InfoDaoService;
-import servlet.Commodity_infoServlet;
+import dao.BaseDaow;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-public class Text extends BaseDao {
+public class Text extends BaseDaow {
     public static void main(String[] args) {
 
 //        *

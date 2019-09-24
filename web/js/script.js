@@ -49,7 +49,7 @@ scene.add(group);
 const loader = new THREE.FontLoader();
 const textMesh = new THREE.Mesh();
 const createTypo = font => {
-  const word = "UserInfo";
+  const word = "ByBy";
   const typoProperties = {
     font: font,
     size: cubeSize,
