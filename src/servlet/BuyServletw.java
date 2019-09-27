@@ -1,5 +1,6 @@
 package servlet;
 
+import dao.AddressDaow;
 import entity.*;
 import service.*;
 
@@ -20,25 +21,49 @@ public class BuyServletw extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String op = request.getParameter("op");
         if("byShow".equals(op)) {
+            System.out.println("执行此代码");
             if (((Enter) (request.getSession().getAttribute("e"))) == null) {
                 out.print("1");
                 return;
             }
+            Pagew pg = new Pagew();
+//            定义一个分页地址
+            pg.setRow(3);
+            String indexPage = request.getParameter("indexPage");
+            if(indexPage==null){
+                indexPage = "1";
+            }
+            pg.setIndexPage(Integer.parseInt(indexPage));
+            int ids = ((Enter) (request.getSession().getAttribute("e"))).getEnter_id();
+            pg.setSumCount(new AddressDaow().getListAddressCount(ids));
+//          分页查询地址
+            List<Address> addressess = new AddressServicew().getListAddress(ids,(pg.getIndexPage()-1)*pg.getRow(),pg.getRow());
+            pg.setList(addressess);
+            request.getSession().setAttribute("pg",pg);
+//                修改了这个地址
+            List<Address> selAddresses = new AddressServicew().getListAddress(((Enter) (request.getSession().getAttribute("e"))).getEnter_id());
+            request.getSession().setAttribute("selAddress", selAddresses);
+            int id = ((Enter)(request.getSession().getAttribute("e"))).getEnter_id();
+            List<Address> addresses = new AddressServicew().getListAddress(id);
+            request.getSession().setAttribute("address",addresses);
+
             String page = request.getParameter("page");
             if ("details".equals(page)) {
                 String sid = request.getParameter("sid");
                 String type = request.getParameter("type");
                 String num = request.getParameter("num");
+                Show_info show_info = new Show_InfoDaoServicew().listByIdImage(Integer.parseInt(sid));
                 Commodity_info comm = new Commodity_infoServicew().commById(Integer.parseInt(sid));
                 Abapt ab = new AbaptServicew().getAbapt(Integer.parseInt(type));
 //            加载地址
                 request.getSession().setAttribute("comm",comm);
+                request.getSession().setAttribute("img",show_info);
                 request.getSession().setAttribute("ab",ab);
                 request.getSession().setAttribute("num",num);
+            }else {
+                response.sendRedirect("byShopping.jsp");
             }
-            int id = ((Enter)(request.getSession().getAttribute("e"))).getEnter_id();
-            List<Address> addresses = new AddressServicew().getListAddress(id);
-            request.getSession().setAttribute("address",addresses);
+
 
         }else if("add".equals(op)){
             String comm_id = request.getParameter("comm");
@@ -74,11 +99,13 @@ public class BuyServletw extends HttpServlet {
                 if(ret>0){
                     new Commodity_infoServicew().rowById(commodity.getCommodity_info_id());
                     request.getSession().removeAttribute("comm");
-                    response.sendRedirect("index.jsp");
+                    out.print("<script>alert('购买成功');location.href='index.jsp';</script>");
                 }
             }
         }else if("shopc".equals(op)){
             String[] sel = request.getParameterValues("select-all");
+
+
 
 //            String [] id = request.getParameterValues("id");
 //            购买的数量
@@ -128,8 +155,7 @@ public class BuyServletw extends HttpServlet {
                 new Commodity_infoServicew().rowById(shopcart.getCommodity().getCommodity_info_id());
             }
             request.getSession().removeAttribute("comm");
-            response.sendRedirect("index.jsp");
-
+            out.print("<script>alert('购买成功');location.href='index.jsp';</script>");
 
         }
         out.flush();

@@ -30,4 +30,15 @@ public int getdelete(int id);
 //根据品牌删商品
 public int getdeletesp(int id);
 
+//修改品牌上架状态
+public int updateBrand(int id);
+
+//修改下架品牌状态
+public int updateSJBrand(int id);
+
+//查询下架的品牌
+public List<Brand> selSJBrand();
+
+//判断商品上架的品牌是否是下架状态
+public int selectXJBrand(int id);
 }

@@ -43,8 +43,12 @@ public class Commodity_infoServiceL {
     	return new Commodity_infoDaoL().delShowInfo(id);
     }
     
-    public int delCommodity(int id) {
-    	return new Commodity_infoDaoL().delCommodity(id);
+    public int updateCommodity(int id) {
+    	return new Commodity_infoDaoL().updateCommodity(id);
+    }
+    
+    public int updateSJCommodity(int id) {
+    	return new Commodity_infoDaoL().updateSJCommodity(id);
     }
     
     public List<Commodity_info> selAll(int indexPage, int row, int id) {
@@ -97,5 +101,25 @@ public class Commodity_infoServiceL {
     
     public int insertAbapt(int abaptId, int commId) {
     	return new Commodity_infoDaoL().insertAbapt(abaptId, commId);
+
+    }
+    public String getTitleByid(int id) {
+        return new Commodity_infoDaoL().getTitleByid(id);
+    }
+    
+    public int selectTJCount(String name, int id) {
+    	return new Commodity_infoDaoL().selectTJCount(name, id);
+    }
+    
+    public List<Commodity_info> selectTJAll(int indexPage, int row,String name, int id) {
+    	return new Commodity_infoDaoL().selectTJAll(indexPage, row, name, id);
+    }
+    
+    public List<Commodity_info> selectSJAll(int indexPage, int row,String name, int id) {
+    	return new Commodity_infoDaoL().selectSJAll(indexPage, row, name, id);
+    }
+    
+    public int selectSJCount(String name, int id) {
+    	return new Commodity_infoDaoL().selectSJCount(name, id);
     }
 }

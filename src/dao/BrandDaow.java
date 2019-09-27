@@ -22,7 +22,7 @@ public class BrandDaow extends BaseDaow implements BrandDaoImplw {
                 hao += "?,";
             }
         }
-        this.executeQuery("SELECT * FROM brand WHERE Brand_id IN ("+hao+")",obj);
+        this.executeQuery("SELECT * FROM brand WHERE Brand_id IN ("+hao+")  and  Brand_type = 0",obj);
         try {
             while (rs.next()){
                 Brand brand = new Brand();

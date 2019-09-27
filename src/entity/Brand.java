@@ -6,6 +6,7 @@ public class Brand {
 	private String brand_name;//品牌名称
 	private Commodity comm;//商品外键
 
+//	  数据库里面应该加一个bread状态
 	public Commodity getComm() {
 		return comm;
 	}

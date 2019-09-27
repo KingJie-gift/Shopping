@@ -162,6 +162,7 @@ public class Commodity_infoServletw extends HttpServlet {
 
 //            显示商品
             String sid = request.getParameter("sid");
+
             Commodity_info comm = new Commodity_infoServicew().commById(Integer.parseInt(sid));
 
             String details = comm.getCommodity_show();

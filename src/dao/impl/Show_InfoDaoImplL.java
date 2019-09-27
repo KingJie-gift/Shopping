@@ -17,6 +17,12 @@ public interface Show_InfoDaoImplL {
   	
   	//删除图片信息
   	public int delShow_info(int id);
-  	
-  	
+//  	根据商品删除图片一张
+    public int delImg(int id);
+
+//    查询上面的图片路径Id
+    public Show_info getIdImg(int id);
+
+//    插入图片
+    public int insert(Show_info show_info);
 }

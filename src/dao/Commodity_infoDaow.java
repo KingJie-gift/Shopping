@@ -10,13 +10,13 @@ import java.util.List;
 public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImplw {
     @Override
     public List<Commodity_info> getIndexTime() {
-        this.executeQuery("SELECT commodity_info_id,commodity_num, commodity_info_name,commodity_info_money,commodity_info_Jmoney FROM `commodity_info` ORDER BY commodity_num DESC LIMIT 8", null);
+        this.executeQuery("SELECT commodity_info_id,commodity_num, commodity_info_name,commodity_info_money,commodity_info_Jmoney FROM `commodity_info` where commodity_dyoptype = 0 ORDER BY commodity_num DESC LIMIT 8", null);
         return getList();
     }
 
     @Override
     public List<Commodity_info> getRecommend() {
-        this.executeQuery("SELECT commodity_info_id,commodity_num, commodity_info_name,commodity_info_money,commodity_info_Jmoney FROM `commodity_info` ORDER BY commodity_num LIMIT 30", null);
+        this.executeQuery("SELECT commodity_info_id,commodity_num, commodity_info_name,commodity_info_money,commodity_info_Jmoney FROM `commodity_info` where commodity_dyoptype = 0 ORDER BY commodity_num LIMIT 30", null);
         return getList();
     }
 
@@ -24,38 +24,38 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
     public List<Commodity_info> getByLimit(int indexPage, int row, int type, int comm, String like,int prent_id,int commType,int day) {
         String sql = "";
         if(comm!=-1){
-            sql = "SELECT * FROM `commodity_info` WHERE commodity_small_id ="+comm+" ORDER BY  commodity_num DESC LIMIT ? ,?";
+            sql = "SELECT * FROM `commodity_info` WHERE commodity_small_id ="+comm+" and commodity_dyoptype = 0 ORDER BY  commodity_num DESC LIMIT ? ,?";
         }
         if(prent_id!=-1){
             sql = "SELECT * FROM commodity_info WHERE commodity_small_id IN (\n" +
                     "SELECT commodity_small_id FROM `commodity_small` WHERE commodity_id IN (\n" +
                     "\tSELECT commodity_id FROM `commodity` WHERE commodity_id = "+prent_id+")\n" +
-                    "\t) ORDER BY  commodity_num DESC LIMIT ? ,?";
+                    "\t) and commodity_dyoptype = 0 ORDER BY  commodity_num DESC LIMIT ? ,?";
         }
 
         if(like!="-1"){
             if(commType==1){
                 String add = name(like);
-                sql = "SELECT * FROM commodity_info WHERE " + add +" ORDER BY  commodity_num DESC LIMIT ? ,?";
+                sql = "SELECT * FROM commodity_info WHERE " + add +" and commodity_dyoptype = 0 ORDER BY  commodity_num DESC LIMIT ? ,?";
             }else if(commType==2) {
                 String add = brend(like);
                 sql = "SELECT * FROM commodity_info WHERE  commodity_millbrand_id IN (\n" +
                         "\tSELECT Brand_id FROM `brand` WHERE "+add+"\n" +
-                        ") ORDER BY  commodity_num DESC LIMIT ? ,?";
+                        ") and commodity_dyoptype = 0 ORDER BY  commodity_num DESC LIMIT ? ,?";
             }
         }
 
         if(type!=-1){
             if(type==1){
-                sql = "SELECT * FROM commodity_info ORDER BY commodity_num DESC LIMIT ?,?";
+                sql = "SELECT * FROM commodity_info where commodity_dyoptype = 0 ORDER BY commodity_num DESC LIMIT ?,?";
             }else if(type==2){
-                sql = "SELECT * FROM commodity_info ORDER BY commodity_info_money LIMIT ?,?";
+                sql = "SELECT * FROM commodity_info where commodity_dyoptype = 0 ORDER BY commodity_info_money LIMIT ?,?";
             }else if(type==3){
-                sql = "SELECT * FROM commodity_info ORDER BY commodity_millyield DESC  LIMIT ?,?";
+                sql = "SELECT * FROM commodity_info where commodity_dyoptype = 0 ORDER BY commodity_millyield DESC  LIMIT ?,?";
             }
         }
         if(day!=-1){
-            sql = "SELECT * FROM commodity_info WHERE commodity_day = 1 LIMIT ?,?";
+            sql = "SELECT * FROM commodity_info WHERE commodity_day = 1 and commodity_dyoptype = 0 LIMIT ?,?";
         }
         System.out.println(sql);
 //        String sql = "";
@@ -140,15 +140,15 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
     @Override
     public int sumCountAll(int comm,int prent_id,String like,int commType,int type,int day) {
 
-        String sql = "SELECT COUNT(*) FROM commodity_info";
+        String sql = "SELECT COUNT(*) FROM commodity_info where commodity_dyoptype = 0";
         if(comm!=-1){
-            sql = "SELECT COUNT(*) FROM commodity_info WHERE commodity_small_id = "+comm;
+            sql = "SELECT COUNT(*) FROM commodity_info WHERE commodity_small_id = "+comm+" and  commodity_dyoptype = 0";
         }
         if(prent_id!=-1){
             sql = "SELECT count(*) FROM commodity_info WHERE commodity_small_id IN (\n" +
                     "SELECT commodity_small_id FROM `commodity_small` WHERE commodity_id IN (\n" +
                     "\tSELECT commodity_id FROM `commodity` WHERE commodity_id = "+prent_id+")\n" +
-                    "\t)";
+                    "\t) and commodity_dyoptype = 0";
         }
         if(like!="-1"){
             if(commType==1){
@@ -158,21 +158,21 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
                 String add = brend(like);
                 sql = "SELECT COUNT(*) FROM commodity_info WHERE  commodity_millbrand_id IN (\n" +
                         "\tSELECT Brand_id FROM `brand` WHERE "+add+"\n" +
-                        ")";
+                        ") and commodity_dyoptype = 0";
             }
         }
 
         if(type!=-1){
             if(type==1){
-                sql = "SELECT count(*) FROM commodity_info ORDER BY commodity_num";
+                sql = "SELECT count(*) FROM commodity_info where commodity_dyoptype = 0 ORDER BY commodity_num";
             }else if(type==2){
-                sql = "SELECT count(*) FROM commodity_info ORDER BY commodity_info_money";
+                sql = "SELECT count(*) FROM commodity_info where commodity_dyoptype = 0 ORDER BY commodity_info_money";
             }else if(type==3){
-                sql = "SELECT count(*) FROM commodity_info ORDER BY commodity_millyield";
+                sql = "SELECT count(*) FROM commodity_info where commodity_dyoptype = 0 ORDER BY   commodity_millyield";
             }
         }
         if(day!=-1){
-            sql = "SELECT COUNT(*) FROM commodity_info WHERE commodity_day = 1";
+            sql = "SELECT COUNT(*) FROM commodity_info WHERE commodity_day = 1 and commodity_dyoptype = 0";
         }
 
         System.out.println(sql);
@@ -192,13 +192,13 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
 
     @Override
     public List<Commodity_info> dayShow() {
-        this.executeQuery("SELECT * FROM commodity_info WHERE commodity_tomorrow = 1 ORDER BY commodity_num DESC LIMIT 3 ", null);
+        this.executeQuery("SELECT * FROM commodity_info WHERE commodity_tomorrow = 1 and  commodity_dyoptype = 0 ORDER BY commodity_num DESC LIMIT 3 ", null);
         return getList();
     }
 
     @Override
     public Commodity_info commById(int id) {
-        this.executeQuery("SELECT * FROM commodity_info WHERE commodity_info_id = ?", new Object[]{id});
+        this.executeQuery("SELECT * FROM commodity_info WHERE commodity_info_id = ? ", new Object[]{id});
         Commodity_info comm = null;
         try {
             while (rs.next()) {
@@ -220,7 +220,7 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
 
     @Override
     public List<Integer> getComm() {
-        this.executeQuery("SELECT commodity_millbrand_id  FROM commodity_info GROUP BY `commodity_millbrand_id` ORDER BY COUNT(commodity_millbrand_id) DESC LIMIT 3", null);
+        this.executeQuery("SELECT commodity_millbrand_id  FROM commodity_info where commodity_dyoptype = 0  GROUP BY `commodity_millbrand_id`  ORDER BY COUNT(commodity_millbrand_id) DESC LIMIT 3", null);
         List<Integer> list = new ArrayList<>();
         try {
             while (rs.next()) {
@@ -240,7 +240,7 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
                 "\tSELECT commodity_small_id FROM `commodity_small` WHERE commodity_id IN (\n" +
                 "\t\tSELECT commodity_id FROM `commodity` WHERE commodity_name = ?\n" +
                 "\t)\n" +
-                ") LIMIT 5 ",new Object[]{comm});
+                ") and commodity_dyoptype = 0  LIMIT 5 ",new Object[]{comm});
         return this.getList();
     }
 
@@ -248,7 +248,7 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
     public List<Commodity_info> getTShopping(int id) {
         this.executeQuery("SELECT * FROM commodity_info WHERE commodity_small_id IN (\n" +
                 "\tSELECT commodity_small_id FROM commodity_info WHERE commodity_info_id = ?\n" +
-                ") AND commodity_info_id < "+id+" LIMIT 6",new Object[]{id});
+                ") AND commodity_info_id < "+id+" and commodity_dyoptype = 0  LIMIT 6",new Object[]{id});
         return this.getList();
     }
 

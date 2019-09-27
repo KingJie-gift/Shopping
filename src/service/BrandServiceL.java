@@ -45,4 +45,18 @@ public class BrandServiceL {
     public int getdeletesp(int id) {
     	return new BrandDaoL().getdeletesp(id);
     }
+    public int updateBrand(int id) {
+    	return new BrandDaoL().updateBrand(id);
+    }
+    public List<Brand> selSJBrand() {
+    	return new BrandDaoL().selSJBrand();
+    }
+    public int updateSJBrand(int id) {
+    	return new BrandDaoL().updateSJBrand(id);
+    }
+    public int selectXJBrand(int id) {
+    	return new BrandDaoL().selectXJBrand(id);
+    }
+    
+    
 }

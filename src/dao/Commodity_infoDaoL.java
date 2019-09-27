@@ -137,7 +137,7 @@ public class Commodity_infoDaoL extends BaseDaoL implements Commodity_infoDaoImp
 	@Override
 	public List<Commodity_info> selectAll(int indexPage, int row, int id) {
 		List<Commodity_info> list=new ArrayList<Commodity_info>();
-		String sql="SELECT * FROM `commodity_info` WHERE commodity_millbrand_id=? limit ?,?";
+		String sql="SELECT * FROM `commodity_info` WHERE commodity_millbrand_id=? AND commodity_dyoptype=0 limit ?,?";
 		Object[] param={id,(indexPage-1)*row,row};
 		executeQuery(sql, param);
 		try {
@@ -211,8 +211,8 @@ public class Commodity_infoDaoL extends BaseDaoL implements Commodity_infoDaoImp
 	}
 
 	@Override
-	public int delCommodity(int id) {
-		String sql="DELETE FROM `commodity_info` WHERE commodity_info_id=?";
+	public int updateCommodity(int id) {
+		String sql="UPDATE `commodity_info` SET commodity_dyoptype=1 WHERE commodity_info_id=?";
 		Object[] param={id};
 		return executeUpdate(sql, param);
 	}
@@ -238,7 +238,7 @@ public class Commodity_infoDaoL extends BaseDaoL implements Commodity_infoDaoImp
                 comm.setCommodity_millstock(rs.getString("commodity_millstock"));
                 comm.setCommodity_milldate(rs.getInt("commodity_milldate"));
                 comm.setCommodity_millyield(rs.getDate("commodity_millyield"));
-                comm.setCommodity_milltype(rs.getString("commodity_milltype"));  
+
             }
         }catch (SQLException sql){
             sql.printStackTrace();
@@ -422,21 +422,145 @@ public class Commodity_infoDaoL extends BaseDaoL implements Commodity_infoDaoImp
 	}
 
 	@Override
-	public int insertAbapt(int abaptId, int commId) {
-		String sql="INSERT `abapt_commodity` VALUES(null,commodity_id=?,abapt_id=?)";
+	public int insertAbapt(int commId,int abaptId ) {
+		String sql="INSERT `abapt_commodity` VALUES(null,?,?)";
 		Object[] param={commId,abaptId};
 		return executeUpdate(sql, param);
 	}
 
-	
+	@Override
+	public String getTitleByid(int id) {
+		this.executeQuery("SELECT commodity_info_name FROM `commodity_info` WHERE commodity_info_id = ?",new Object[]{id});
+		String title = "";
+		try {
+			while (rs.next()){
+				title = rs.getString("commodity_info_name");
+			}
+		}catch (SQLException sql){
+			sql.printStackTrace();
+		}finally {
+			this.closeAll();
+		}
+		return title;
+	}
 
-	
+	@Override
+	public int selectTJCount(String name, int id) {
+		int count=0;
+		String sql="SELECT COUNT(*) FROM `commodity_info` WHERE 1=1 ";
+		if(name!=null){
+			sql+=" AND commodity_info_name LIKE '%"+name+"%' ";
+		}
+		if(id!=-1){
+			sql+=" AND commodity_millbrand_id="+id;
+		}
+		executeQuery(sql, null);
+		try {
+			if(rs.next()){
+				count=rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			closeAll();
+		}
+		return count;
+	}
 
-	
+	@Override
+	public List<Commodity_info> selectTJAll(int indexPage, int row,String name, int id) {
+		List<Commodity_info> list=new ArrayList<Commodity_info>();
+		String sql="SELECT * FROM `commodity_info` WHERE 1=1 ";
+		if(name!=null){
+			sql+=" AND commodity_info_name LIKE '%"+name+"%' ";
+		}
+		if(id!=-1){
+			sql+=" AND commodity_millbrand_id="+id;
+		}
+		sql+=" AND commodity_dyoptype=0 limit ?,?";
+		Object[] param={(indexPage-1)*row,row};
+		executeQuery(sql, param);
+		try {
+			while(rs.next()){
+				Commodity_info c=new Commodity_info();
+				c.setCommodity_info_id(rs.getInt("commodity_info_id"));
+				c.setCommodity_info_name(rs.getString("commodity_info_name"));
+				c.setCommodity_info_money(rs.getDouble("commodity_info_money"));
+				c.setCommodity_num(rs.getString("commodity_num"));
+				c.setCommodity_millyield(rs.getDate("commodity_millyield"));
+				list.add(c);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			closeAll();
+		}
+		return list;
+	}
 
-	
+	@Override
+	public List<Commodity_info> selectSJAll(int indexPage, int row,String name, int id) {
+		List<Commodity_info> list=new ArrayList<Commodity_info>();
+		String sql="SELECT * FROM `commodity_info` WHERE 1=1 ";
+		if(name!=null){
+			sql+=" AND commodity_info_name LIKE '%"+name+"%' ";
+		}
+		if(id!=-1){
+			sql+=" AND commodity_millbrand_id="+id;
+		}
+		sql+=" AND commodity_dyoptype=1 limit ?,?";
+		Object[] param={(indexPage-1)*row,row};
+		executeQuery(sql, param);
+		try {
+			while(rs.next()){
+				Commodity_info c=new Commodity_info();
+				c.setCommodity_info_id(rs.getInt("commodity_info_id"));
+				c.setCommodity_info_name(rs.getString("commodity_info_name"));
+				c.setCommodity_info_money(rs.getDouble("commodity_info_money"));
+				c.setCommodity_num(rs.getString("commodity_num"));
+				c.setCommodity_millyield(rs.getDate("commodity_millyield"));
+				list.add(c);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			closeAll();
+		}
+		return list;
+	}
 
-	
+	@Override
+	public int selectSJCount(String name, int id) {
+		int count=0;
+		String sql="SELECT COUNT(*) FROM `commodity_info` WHERE 1=1 ";
+		if(name!=null){
+			sql+=" AND commodity_info_name LIKE '%"+name+"%' ";
+		}
+		if(id!=-1){
+			sql+=" AND commodity_millbrand_id="+id;
+		}
+		sql+=" AND commodity_dyoptype=1";
+		executeQuery(sql, null);
+		try {
+			if(rs.next()){
+				count=rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			closeAll();
+		}
+		return count;
+	}
 
-	
+	@Override
+	public int updateSJCommodity(int id) {
+		String sql="UPDATE `commodity_info` SET commodity_dyoptype=0 WHERE commodity_info_id=?";
+		Object[] param={id};
+		return executeUpdate(sql, param);
+	}
 }

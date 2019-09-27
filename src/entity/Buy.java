@@ -10,6 +10,7 @@ public class Buy {
 	private int bug_type;//签收状态    0:未发货1:发货2:签收3:未签收4:派送中
 	private Date buy_date;//购买时间
 	private Address address;
+
 	public int getBuy_id() {
 		return buy_id;
 	}
@@ -40,11 +41,9 @@ public class Buy {
 	public void setBuy_date(Date buy_date) {
 		this.buy_date = buy_date;
 	}
-
 	public Address getAddress() {
 		return address;
 	}
-
 	public void setAddress(Address address) {
 		this.address = address;
 	}

@@ -77,7 +77,35 @@ public class Show_InfoDaoL extends BaseDaoL implements Show_InfoDaoImplL {
 		return this.executeUpdate("DELETE FROM buyshow WHERE buyshow_id = ?",new Object[]{id});
 	}
 
-	
+	public int delImg(int id){
+        return this.executeUpdate("DELETE FROM show_info WHERE Show_info_id = ?",new Object[]{id});
+    }
 
-	
+    @Override
+    public Show_info getIdImg(int id) {
+        this.executeQuery("SELECT * FROM show_info WHERE Show_info_cid = ? ORDER BY Show_info_id DESC limit 1",new Object[]{id});
+        Show_info image = null;
+        try {
+            while (rs.next()){
+                image = new Show_info();
+                image.setShow_info_id(rs.getInt("Show_info_id"));
+                Commodity_info commodity_info = new Commodity_info();
+                commodity_info.setCommodity_info_id(rs.getInt("Show_info_cid"));
+                image.setCommodity(commodity_info);
+                image.setShow_info_url(rs.getString("Show_info_url"));
+            }
+        }catch (SQLException sql){
+            sql.printStackTrace();
+        }finally {
+            this.closeAll();
+        }
+        return image;
+    }
+
+    @Override
+    public int insert(Show_info show_info) {
+        return this.executeUpdate("INSERT INTO show_info VALUES(NULL,?,?)",new Object[]{show_info.getCommodity().getCommodity_info_id(),show_info.getShow_info_url()});
+    }
+
+
 }

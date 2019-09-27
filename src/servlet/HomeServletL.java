@@ -27,8 +27,16 @@ public class HomeServletL extends HttpServlet {
         
         List<Brand> br=new BrandServiceL().selectAll();
         request.getSession().setAttribute("brand", br);
+        List<Brand> sjbr=new BrandServiceL().selSJBrand();
+        request.getSession().setAttribute("sjbr", sjbr);
         List<Commodity> co=new BrandServiceL().selectComm();
         request.getSession().setAttribute("co", co);
+        List<Brand> blist = new BrandServiceL().getBrandAll();
+        request.getSession().setAttribute("br1",blist );
+        List<Brand> blist2 = new BrandServiceL().getBrandAll2();
+        request.getSession().setAttribute("br2",blist2 );
+        List<Brand> blist3 = new BrandServiceL().getBrandAll3();
+        request.getSession().setAttribute("br3",blist3 );
         
         if (op == null||"first".equals(op)) {
             List<Brand> list = new BrandServiceL().getBrandAll();
@@ -87,8 +95,6 @@ public class HomeServletL extends HttpServlet {
                     }
 
             request.getRequestDispatcher("back/home3.jsp").forward(request, response);
-        }else if("all".equals(op)){
-        	
         }
         
         out.flush();

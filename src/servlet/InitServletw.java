@@ -66,10 +66,21 @@ public class InitServletw extends HttpServlet {
 //                    }
 //                }
 //            }
+
+
+//            这是个是购物车
             List<Shopcart> shopcarts = null;
             if((Enter)(request.getSession().getAttribute("e"))!=null){
                 shopcarts = new ShopcartServicew().getShopcart(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+                System.out.println(shopcarts.size());
+                ArrayList<Show_info> getSho = new ArrayList<>();
+                for(int i = 0 ; i < shopcarts.size() ; i ++ ){
+                    getSho.add(new Show_InfoDaoServicew().listByIdImage(shopcarts.get(i).getCommodity().getCommodity_info_id()));
+                }
+                request.getSession().setAttribute("shopImg",getSho);
             }
+
+
 
 
             List<Commodity_info> yi = new Commodity_infoServicew().getListComm("儿童童衣");
@@ -108,6 +119,20 @@ public class InitServletw extends HttpServlet {
             if((Enter)(request.getSession().getAttribute("e"))!=null){
                 collects = new CollectServicew().getEnterAllById(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
                 buyshows = new BuyShowDaow().byShowInfo(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+                List<Show_info> list = new ArrayList<>();
+                for(Buyshow buyshow : buyshows){
+                    System.out.println(buyshow+"是否为空");
+                    System.out.println(buyshow.getCommodity().getCommodity_info_id());
+                    if((new Show_InfoDaoServicew().listByIdImage(buyshow.getCommodity().getCommodity_info_id())!=null)){
+                        list.add(new Show_InfoDaoServicew().listByIdImage(buyshow.getCommodity().getCommodity_info_id()));
+                    }
+                }
+                List<Show_info> coll = new ArrayList<>();
+                for(Collect collect : collects){
+                    coll.add(new Show_InfoDaoServiceL().listByIdImage(collect.getCommodity().getCommodity_info_id()));
+                }
+                request.getSession().setAttribute("buyImg",list);
+                request.getSession().setAttribute("collImg",coll);
             }
 //            显示有多个是收藏
 
@@ -117,10 +142,11 @@ public class InitServletw extends HttpServlet {
             }
 
 //            保存用户信息
-            if((Enter)(request.getSession().getAttribute("e"))!=null){
-                List<Address> selAddresses = new AddressServicew().getListAddress(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
-                request.getSession().setAttribute("selAddress",selAddresses);
-            }
+//        address地址重复
+//            if((Enter)(request.getSession().getAttribute("e"))!=null){
+//                List<Address> selAddresses = new AddressServicew().getListAddress(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+//                request.getSession().setAttribute("selAddress",selAddresses);
+//            }
 
 //            加载用户信息
             if((Enter)(request.getSession().getAttribute("e"))!=null){
@@ -183,6 +209,27 @@ public class InitServletw extends HttpServlet {
             }
         }
         return listTime;
+    }
+
+    public static void getConnction(HttpServletRequest request, HttpServletResponse response){
+        List<Collect> collects = null;
+        List<Buyshow> buyshows = null;
+        if((Enter)(request.getSession().getAttribute("e"))!=null){
+            collects = new CollectServicew().getEnterAllById(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+            buyshows = new BuyShowDaow().byShowInfo(((Enter)(request.getSession().getAttribute("e"))).getEnter_id());
+            List<Show_info> list = new ArrayList<>();
+            for(Buyshow buyshow : buyshows){
+                list.add(new Show_InfoDaoServicew().listByIdImage(buyshow.getCommodity().getCommodity_info_id()));
+            }
+            request.getSession().setAttribute("buyImg",list);
+            List<Show_info> coll = new ArrayList<>();
+            for(Collect collect : collects){
+                coll.add(new Show_InfoDaoServiceL().listByIdImage(collect.getCommodity().getCommodity_info_id()));
+            }
+            request.getSession().setAttribute("collects",collects);
+            request.getSession().setAttribute("buyImg",list);
+            request.getSession().setAttribute("collImg",coll);
+        }
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);

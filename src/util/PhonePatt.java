@@ -18,9 +18,9 @@ public class PhonePatt {
             sb.append(ran.nextInt(9));
         }
         HttpClient client = new HttpClient();
-        PostMethod post = new PostMethod("http://gbk.api.smschinese.cn");
+        PostMethod post = new PostMethod("http://utf8.api.smschinese.cn/");
         post.addRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=gbk");//在头文件中设置转码
-        NameValuePair[] data ={ new NameValuePair("Uid", "aaccdd"),new NameValuePair("Key", "d41d8cd98f00b204e980"),new NameValuePair("smsMob",phone),new NameValuePair("smsText","验证码："+sb.toString())};
+        NameValuePair[] data ={ new NameValuePair("Uid", "gengzhiwei"),new NameValuePair("Key", "d41d8cd98f00b204e980"),new NameValuePair("smsMob",phone),new NameValuePair("smsText","验证码："+sb.toString())};
         post.setRequestBody(data);
 
         try {

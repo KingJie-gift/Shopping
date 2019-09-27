@@ -5,8 +5,8 @@ import entity.Address;
 import java.util.List;
 
 public interface AddressDaoImplw {
-//    显示用户的地址
-    public List<Address> getListAddress(int id);
+    public int getListAddressCount(int id);
+    public List<Address> getListAddress(int id) ;
 
 //    添加地址
     public int addAddress(Address address);
@@ -18,4 +18,6 @@ public interface AddressDaoImplw {
     public int getDelete(int id);
 //更新地址
     public int getUpdate(Address a) ;
+    //    显示用户的地址
+    public List<Address> getListAddress(int indexPage, int row , int id);
 }

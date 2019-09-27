@@ -22,7 +22,7 @@ public class BuyShowDaow extends BaseDaow implements BuyShowDaoImplw {
     public List<Buyshow> byShowInfo(int id) {
         this.executeQuery("SELECT * FROM  buyshow  WHERE buyshow_Bug_id IN(\n" +
                 "\tSELECT Bug_id FROM  buy  WHERE Bug_enter_cid= ?\n" +
-                " ORDER BY buyshow_id DESC )",new Object[]{id});
+                "  )  ORDER BY buyshow_id DESC ",new Object[]{id});
         List<Buyshow> buyshows = new ArrayList<>();
         try {
             while (rs.next()){

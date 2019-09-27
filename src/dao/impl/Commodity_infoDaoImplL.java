@@ -41,8 +41,11 @@ public int selectCount(int id);
 // 删除商品的图片
 public int delShowInfo(int id);
 
-//删除商品
-public int delCommodity(int id);
+//下架商品
+public int updateCommodity(int id);
+
+//下架商品
+public int updateSJCommodity(int id);
 
 //查询其他商品
 public List<Commodity_info> selAll(int indexPage, int row, int id);
@@ -81,6 +84,20 @@ public List<Abapt> selectA();
 public int selectNewId();
 
 //添加使用人群多读多
-public int insertAbapt(int abaptId, int commId);
+public int insertAbapt(int commId, int abaptId);
 
+//根据编号查找标题
+public String getTitleByid(int id);
+
+//条件查询总数
+public int selectTJCount(String name, int id);
+
+//条件查询总数
+public int selectSJCount(String name, int id);
+
+//条件查询数据
+public List<Commodity_info> selectTJAll(int indexPage, int row, String name, int id);
+
+//条件查询下架数据
+public List<Commodity_info> selectSJAll(int indexPage, int row, String name, int id);
 }

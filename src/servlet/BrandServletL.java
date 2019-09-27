@@ -28,7 +28,6 @@ public class BrandServletL extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
-
         String op=request.getParameter("op");
         if(op==null||"add".equals(op)){
         	String Brand_name=request.getParameter("name");
@@ -50,12 +49,21 @@ public class BrandServletL extends HttpServlet {
         	
         }else if("del".equals(op)){
         	int id=Integer.parseInt(request.getParameter("id"));
-        	new BrandServiceL().getdeletesp(id);
+        	
         	int count=new BrandServiceL().getdelete(id);
+        	new BrandServiceL().updateBrand(id);
         	if(count>0){
-        		out.print("<script>alert('删除品牌成功');location.href='back/home1.jsp';</script>");
+        		out.print("<script>alert('品牌下架成功');location.href='back/home1.jsp';</script>");
         	}else{
-        		out.print("<script>alert('删除品牌失败');location.href='back/home1.jsp';</script>");
+        		out.print("<script>alert('品牌下架失败');location.href='back/home1.jsp';</script>");
+        	}
+        }else if("SJbrand".equals(op)){
+        	int id=Integer.parseInt(request.getParameter("id"));
+        	int count=new BrandServiceL().updateSJBrand(id);
+        	if(count>0){
+        		out.print("<script>alert('品牌上架成功');location.href='back/home1.jsp';</script>");
+        	}else{
+        		out.print("<script>alert('品牌上架失败');location.href='back/home1.jsp';</script>");
         	}
         }
         

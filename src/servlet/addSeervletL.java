@@ -80,8 +80,10 @@ public class addSeervletL extends HttpServlet {
 			if(count>0){
 				
 				String [] ye = request.getParameterValues("bc");
+				
 				for(int i = 0 ; i < ye.length ; i ++ ){
-					new Commodity_infoServiceL().insertAbapt(Integer.parseInt(ye[i]), new Commodity_infoServiceL().selectNewId());
+					System.out.println(new Commodity_infoServiceL().selectNewId());
+					new Commodity_infoServiceL().insertAbapt(new Commodity_infoServiceL().selectNewId(),Integer.parseInt(ye[i]));
 				}
 				out.print("<script>alert('添加成功！');location.href='back/home1.jsp';</script>");
 			}else{

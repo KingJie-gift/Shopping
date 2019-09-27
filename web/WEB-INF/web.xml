@@ -121,6 +121,14 @@
         <servlet-name>ShopcartServletL</servlet-name>
         <servlet-class>servlet.ShopcartServletL</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BackStatusServletw</servlet-name>
+        <servlet-class>servlet.BackStatusServletw</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BackStatusServletw</servlet-name>
+        <url-pattern>/BackStatusServletw</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ShopcartServletL</servlet-name>
         <url-pattern>/ShopcartServletL</url-pattern>
@@ -132,6 +140,14 @@
     <servlet-mapping>
         <servlet-name>CollectServletL</servlet-name>
         <url-pattern>/CollectServletL</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>TreeImgServlet</servlet-name>
+        <servlet-class>servlet.TreeImgServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TreeImgServlet</servlet-name>
+        <url-pattern>/TreeImgServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>BrandServletL</servlet-name>
@@ -180,4 +196,17 @@
         <servlet-name>addSeervletL</servlet-name>
         <url-pattern>/addSeervletL</url-pattern>
     </servlet-mapping>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CounselingServletg</servlet-name>
+    <servlet-class>servlet.CounselingServletg</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+    <servlet-name>CounselingServletg</servlet-name>
+    <url-pattern>/CounselingServletg</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

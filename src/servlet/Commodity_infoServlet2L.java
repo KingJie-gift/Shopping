@@ -17,6 +17,9 @@ import entity.Brand;
 import entity.Commodity_info;
 import entity.Commodity_small;
 import entity.Show_info;
+import service.BrandServiceL;
+import service.Show_InfoDaoServiceL;
+import service.Show_InfoDaoServicew;
 
 public class Commodity_infoServlet2L extends HttpServlet {
 
@@ -94,22 +97,35 @@ public class Commodity_infoServlet2L extends HttpServlet {
 			}else{
 				out.print("<script>alert('修改失败！');location.href='back/home1.jsp';</script>");
 			}
-		}else if("show".equals(op)){
+		}else if("showImg".equals(op)){
 				int id=Integer.parseInt(request.getParameter("id"));
+				request.getSession().setAttribute("comm_id_id",id);
 				request.getSession().setAttribute("comm_id",id);
-				Show_info show=new Commodity_infoServiceL().selectShow(id);
-				
+				List<Show_info> show=new Show_InfoDaoServiceL().getShow_infoById(id);
 				request.setAttribute("show", show);
-				request.getRequestDispatcher("back/form_v.jsp").forward(request, response);	
+				request.getRequestDispatcher("back/img.jsp").forward(request, response);
 		}else if("delete".equals(op)){
-			
 			int id=Integer.parseInt(request.getParameter("id"));
-			int count=new Commodity_infoServiceL().delShowInfo(id);
-			int count2=new Commodity_infoServiceL().delCommodity(id);
-			if(count>0&&count2>0){
-				out.print("<script>alert('商品删除成功！');location.href='back/home1.jsp';</script>");
+			int count2=new Commodity_infoServiceL().updateCommodity(id);
+			if(count2>0){
+				out.print("<script>alert('商品下架成功！');location.href='back/home1.jsp';</script>");
 			}else{
-				out.print("<script>alert('商品删除失败！');location.href='back/home1.jsp';</script>");
+				out.print("<script>alert('商品下架失败！');location.href='back/home1.jsp';</script>");
+			}
+		}else if("updateSJ".equals(op)){
+			int id=Integer.parseInt(request.getParameter("id"));
+			
+			int SJcount=new BrandServiceL().selectXJBrand(id);
+			
+				if(id==SJcount){
+					out.print("<script>alert('该商品对应的品牌没有上架！');location.href='back/update.jsp';</script>");
+				}else{
+					int count=new Commodity_infoServiceL().updateSJCommodity(id);
+					if(count>0){
+						out.print("<script>alert('商品上架成功！');location.href='back/update.jsp';</script>");
+					}else{
+						out.print("<script>alert('商品上架失败！');location.href='back/update.jsp';</script>");
+					}
 			}
 			
 		}

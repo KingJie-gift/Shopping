@@ -1,8 +1,12 @@
 package servlet;
 
+import dao.AddressDaow;
+import dao.impl.AddressDaoImplw;
 import entity.*;
 import service.AddressServicew;
+import service.Pagew;
 import service.ShopcartServicew;
+import service.Show_InfoDaoServicew;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -53,6 +57,7 @@ public class ShopcartServletw extends HttpServlet {
             String name = request.getParameter("xx");
             if("5".equals(name)){
                 request.getSession().removeAttribute("address");
+                request.getSession().removeAttribute("pgx");
             }else {
 //            这个是选中的编号
                 String[] sel = request.getParameterValues("select-all");
@@ -70,10 +75,16 @@ public class ShopcartServletw extends HttpServlet {
 
                 System.out.println(sel.length + "\t" + num.length);
                 List<Shopcart> shopcarts = new ArrayList<>();
+                List<Show_info> list = new ArrayList<>();
                 for (int i = 0; i < sel.length; i++) {
                     Shopcart shopcart = new ShopcartServicew().shById(Integer.parseInt(sel[i]));
                     shopcarts.add(shopcart);
+                    System.out.println(shopcart.getCommodity().getCommodity_info_id());
+                    list.add(new Show_InfoDaoServicew().listByIdImage(shopcart.getCommodity().getCommodity_info_id()));
+                    System.out.println(list.get(i).getShow_info_url());
                 }
+
+                request.getSession().setAttribute("shopImgBy",list);
                 request.getSession().setAttribute("shop_by", shopcarts);
                 request.getSession().setAttribute("num", num);
 //            Commodity_info comm = new Commodity_infoService().commById(Integer.parseInt(sid));
@@ -81,7 +92,18 @@ public class ShopcartServletw extends HttpServlet {
 //            request.getSession().setAttribute("comm", comm);
             }
             int id = ((Enter) (request.getSession().getAttribute("e"))).getEnter_id();
-            List<Address> addresses = new AddressServicew().getListAddress(id);
+            Pagew pg = new Pagew();
+            pg.setRow(3);
+            String indexPage = request.getParameter("indexPage");
+            if(indexPage==null){
+                indexPage = "1";
+            }
+            pg.setIndexPage(Integer.parseInt(indexPage));
+            pg.setSumCount(new AddressDaow().getListAddressCount(id));
+//          分页查询地址
+            List<Address> addresses = new AddressServicew().getListAddress(id,(pg.getIndexPage()-1)*pg.getRow(),pg.getRow());
+            pg.setList(addresses);
+            request.getSession().setAttribute("pgx",pg);
             request.getSession().setAttribute("address", addresses);
             response.sendRedirect("ShoppingCart.jsp");
         }

@@ -29,6 +29,7 @@ public class BrandDaoL extends BaseDaoL implements BrandDaoImplL {
                 Brand brand = new Brand();
                 brand.setBrand_id(rs.getInt("Brand_id"));
                 brand.setBrand_name(rs.getString("Brand_name"));
+                
                 brands.add(brand);
             }
         }catch (SQLException sql){
@@ -46,29 +47,21 @@ public class BrandDaoL extends BaseDaoL implements BrandDaoImplL {
 	@Override
 	public List<Brand> getBrandAll() {
     		List<Brand> list=new ArrayList<Brand>();
-    		String sql="SELECT * FROM brand where Commod_id=1";
+    		String sql="SELECT * FROM brand where Commod_id=1 and Brand_type=0 limit 10";
 		return getBrands(list, sql);
 	}
-
-
-
-
 
 	@Override
 	public List<Brand> getBrandAll2() {
 		List<Brand> list=new ArrayList<Brand>();
-		String sql="SELECT * FROM brand where Commod_id=2";
+		String sql="SELECT * FROM brand where Commod_id=2 and Brand_type=0 limit 10";
 		return getBrands(list, sql);
 	}
-
-
-
-
 
 	@Override
 	public List<Brand> getBrandAll3() {
 		List<Brand> list=new ArrayList<Brand>();
-		String sql="SELECT * FROM brand where Commod_id=3";
+		String sql="SELECT * FROM brand where Commod_id=3 and Brand_type=0 limit 10";
 		return getBrands(list, sql);
 	}
 
@@ -82,6 +75,7 @@ public class BrandDaoL extends BaseDaoL implements BrandDaoImplL {
 				Brand b=new Brand();
 				b.setBrand_id(rs.getInt(1));
 				b.setBrand_name(rs.getString(2));
+				
 				list.add(b);
 			}
 		} catch (SQLException e) {
@@ -100,7 +94,7 @@ public class BrandDaoL extends BaseDaoL implements BrandDaoImplL {
 	@Override
 	public List<Brand> selectAll() {
 		List<Brand> list=new ArrayList<Brand>();
-		String sql="SELECT Brand_id,Brand_name FROM `brand`";
+		String sql="SELECT Brand_id,Brand_name FROM `brand` where Brand_type=0";
 		executeQuery(sql, null);
 		try {
 			while(rs.next()){
@@ -124,7 +118,7 @@ public class BrandDaoL extends BaseDaoL implements BrandDaoImplL {
 
 	@Override
 	public int getBrandAdd(Brand b) {
-		String sql="INSERT `brand`VALUES(NULL,?,?)";
+		String sql="INSERT `brand`VALUES(NULL,?,?,default)";
 		Object[] param={b.getBrand_name(),b.getComm().getCommodity_id()};
 		return executeUpdate(sql, param);
 	}
@@ -160,7 +154,29 @@ public class BrandDaoL extends BaseDaoL implements BrandDaoImplL {
 
 	@Override
 	public int getdelete(int id) {
-		String sql="DELETE  FROM `brand` WHERE  Brand_id=?";
+		String sql="UPDATE `commodity_info` SET commodity_dyoptype=1 WHERE commodity_millbrand_id=?";
+		Object[] param={id};
+		return executeUpdate(sql, param);
+	}
+
+
+	@Override
+	public int updateBrand(int id) {
+		String sql="UPDATE `brand` SET Brand_type=1 WHERE Brand_id=?";
+		Object[] param={id};
+		return executeUpdate(sql, param);
+	}
+
+	@Override
+	public int updateSJBrand(int id) {
+		String sql="UPDATE `brand` SET Brand_type=0 WHERE Brand_id=?";
+		Object[] param={id};
+		return executeUpdate(sql, param);
+	}
+
+	@Override
+	public int getdeletesp(int id) {
+		String sql="DELETE  FROM `commodity_info` WHERE commodity_millbrand_id=?";
 		Object[] param={id};
 		return executeUpdate(sql, param);
 	}
@@ -170,11 +186,60 @@ public class BrandDaoL extends BaseDaoL implements BrandDaoImplL {
 
 
 	@Override
-	public int getdeletesp(int id) {
-		String sql="DELETE  FROM `commodity_info` WHERE commodity_millbrand_id=?";
-		Object[] param={id};
-		return executeUpdate(sql, param);
+	public List<Brand> selSJBrand() {
+		List<Brand> list=new ArrayList<Brand>();
+		String sql="SELECT Brand_id,Brand_name FROM `brand` where Brand_type=1";
+		executeQuery(sql, null);
+		try {
+			while(rs.next()){
+				Brand b=new Brand();
+				b.setBrand_id(rs.getInt(1));
+				b.setBrand_name(rs.getString(2));
+				list.add(b);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			closeAll();
+		}
+		return list;
 	}
+
+
+
+
+
+	@Override
+	public int selectXJBrand(int id) {
+		int count=0;
+		String sql="SELECT commodity_info_id FROM `commodity_info` WHERE commodity_millbrand_id=(SELECT Brand_id FROM `brand` WHERE Brand_type=1) AND commodity_info_id=?";
+		Object[] param={id};
+		executeQuery(sql, param);
+		try {
+			while(rs.next()){
+				count=rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			closeAll();
+		}
+		return count;
+	}
+
+
+
+
+
+	
+
+
+
+
+
+	
 
 
 

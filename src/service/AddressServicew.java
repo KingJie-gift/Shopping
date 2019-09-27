@@ -6,6 +6,9 @@ import entity.Address;
 import java.util.List;
 
 public class AddressServicew {
+    public List<Address> getListAddress(int indexPage, int row ,int id) {
+        return new AddressDaow().getListAddress(indexPage,row,id);
+    }
     public List<Address> getListAddress(int id) {
         return new AddressDaow().getListAddress(id);
     }
