@@ -23,15 +23,18 @@
     <c:if test="${tempcommhome1==null}">
     	<script>location.href="../HomeServletL?op=first";</script>
     </c:if>
-     
+
     <body style="height: 1693px; ">
+
         <div id="top">
             <div id="head">
                 <h1 class="logo">
                     
                 </h1>
+
+
                 <div class="head_memberinfo">
-                   
+
                     <span class='memberinfo_span' style="font-size: 30px">
                        欢迎你，管理员
                    </span>
@@ -106,6 +109,7 @@
                         <ul >
                             <li><a class="headitem item1" href="#">商品管理</a>
                                 <ul><!-- ul items without this class get hiddden by jquery-->
+                                    <li><a href="back/home1.jsp">首页</a></li>
                                     <li><a href="#">奶粉管理</a></li>
                                     <li><a href="back/home.jsp">玩具管理</a></li>
                                     <li><a href="back/home2.jsp">童衣管理</a></li>
@@ -116,10 +120,12 @@
                             </li>
                             <li><a class="headitem item2" href="#">商品添加</a>
                                   <ul><!-- ul items without this class get hiddden by jquery-->
+                                    <li><a href="back/brand1.jsp">一级分类添加</a></li>
+                                      <li><a href="Commodity_smallServletL">二级分类添加</a></li>
                                     <li><a href="addSeervletL">商品添加</a></li>
                                     <li><a href="back/brand.jsp">品牌添加</a></li>
                                     <li><a href="back/sjupdate.jsp">品牌上架</a></li>
-                                    <li><a href="Commodity_smallServletL">种类添加</a></li>
+
                                   </ul>                      
                             </li>
                             <li><a class="headitem item2" href="#">订单状态</a>

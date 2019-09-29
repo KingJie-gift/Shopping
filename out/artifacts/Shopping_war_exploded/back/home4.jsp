@@ -107,6 +107,7 @@
                         <ul >
                             <li><a class="headitem item1" href="#">商品管理</a>
                                 <ul><!-- ul items without this class get hiddden by jquery-->
+                                    <li><a href="back/home1.jsp">首页</a></li>
                                     <li><a href="back/home1.jsp">奶粉管理</a></li>
                                     <li><a href="back/home.jsp">玩具管理</a></li>
                                     <li><a href="back/home2.jsp">童衣管理</a></li>

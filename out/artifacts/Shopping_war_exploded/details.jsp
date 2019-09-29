@@ -95,7 +95,7 @@
             <div class="itemInfo-wrap">
                 <div class="itemInfo">
                     <div class="title">
-                        <h4>${comm.commodity_info_name} </h4>
+                        <h4><c:if test="${comm.brand!=null}">${comm.brand.brand_name}-</c:if>${comm.commodity_info_name} </h4>
                         <c:choose>
                             <c:when test="${coll.enter.enter_id==e.enter_id&&coll.commodity.commodity_info_id==comm.commodity_info_id}">
                                 <span onclick="location.href='CollectServlet?op=add&sid=${comm.commodity_info_id}&type=2&del=${coll.collect_id}'"><i class="i layui-icon layui-icon-rate-solid"></i>已收藏</span>

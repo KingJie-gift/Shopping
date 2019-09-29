@@ -107,10 +107,10 @@ public class InitServletw extends HttpServlet {
             for(int i = 0 ; i < 2 ; i ++ ){
                 zong.add(wan.get(i));
                 zong.add(yi.get(i));
-                zong.add(nai.get(i));
+                zong.add(yi.get(i));
                 zongIma.add(wanImg.get(i));
                 zongIma.add(yiImg.get(i));
-                zongIma.add(naiImg.get(i));
+                zongIma.add(yiImg.get(i));
             }
             zong.add(wan.get(2));
             zongIma.add(wanImg.get(2));

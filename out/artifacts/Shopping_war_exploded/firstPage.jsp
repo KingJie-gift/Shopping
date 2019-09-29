@@ -29,6 +29,9 @@
                     <div class="sp-cart"><a href="collect.jsp">收藏</a><span>${collects.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <div class="sp-cart"><a href="byShow.jsp">已购买</a><span>${buy.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <div class="sp-cart"><a href="showAddress.jsp">地址</a><span>${selAddress.size()}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <c:if test="${e.enter_type==2}">
+                        <div class="sp-cart"><a href="back/login.jsp">后台登入</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    </c:if>
                 </c:when>
             </c:choose>
 

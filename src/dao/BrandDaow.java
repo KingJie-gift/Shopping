@@ -2,6 +2,7 @@ package dao;
 
 import dao.impl.BrandDaoImplw;
 import entity.Brand;
+import entity.Commodity;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -36,5 +37,23 @@ public class BrandDaow extends BaseDaow implements BrandDaoImplw {
             this.closeAll();
         }
         return brands;
+    }
+    public Brand brandByid(int id){
+        this.executeQuery("SELECT * FROM `brand` WHERE `Brand_id` = ?",new Object[]{id});
+        Brand brand = null;
+        try {
+            while (rs.next()){
+                brand = new Brand();
+                brand.setBrand_id(rs.getInt("Brand_id"));
+                brand.setBrand_name(rs.getString("Brand_name"));
+                Commodity commodity = new Commodity();
+                brand.setComm(commodity);
+            }
+        }catch (SQLException sql){
+            sql.printStackTrace();
+        }finally {
+            this.closeAll();
+        }
+        return brand;
     }
 }

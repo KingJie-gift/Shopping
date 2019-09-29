@@ -81,10 +81,11 @@
                                 		<td>${p.commodity_info_money}(元)</td>
                                 		<td>${p.commodity_num}(件)</td>
                                 		<td>${p.commodity_millyield}</td>
-                                		<td>
-                                		<a href="Commodity_infoServlet2L?op=findId&id=${p.commodity_info_id}">查看详情</a>
-                                		<a href="Commodity_infoServlet2L?op=show&id=${p.commodity_info_id}">图片管理</a>
-                                		</td>
+                                        <td>
+                                            <a href="Commodity_infoServlet2L?op=findId&id=${p.commodity_info_id}">查看详情</a>
+                                            <a href="Commodity_infoServlet2L?op=showImg&id=${p.commodity_info_id}">图片管理</a>
+                                            <a href="Commodity_infoServlet2L?op=delete&id=${p.commodity_info_id}">商品下架</a>
+                                        </td>
                                 	</tr>
                                 	</c:forEach>
                                 </table>
@@ -105,6 +106,7 @@
                         <ul >
                             <li><a class="headitem item1" href="#">管理</a>
                                 <ul><!-- ul items without this class get hiddden by jquery-->
+                                    <li><a href="back/home1.jsp">首页</a></li>
                                     <li><a href="#">奶粉管理</a></li>
                                     <li><a href="back/home.jsp">玩具管理</a></li>
                                     <li><a href="back/home2.jsp">童衣管理</a></li>

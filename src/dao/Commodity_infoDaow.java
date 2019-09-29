@@ -209,6 +209,7 @@ public class Commodity_infoDaow extends BaseDaow implements Commodity_infoDaoImp
                 comm.setCommodity_info_Jmoney(rs.getInt("commodity_info_Jmoney"));
                 comm.setCommodity_show(rs.getString("commodity_show"));
                 comm.setCommodity_num(rs.getString("commodity_num"));
+                comm.setBrand(new BrandDaow().brandByid(rs.getInt("commodity_millbrand_id")));
             }
         } catch (SQLException sql) {
             sql.printStackTrace();

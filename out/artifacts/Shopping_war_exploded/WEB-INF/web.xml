@@ -207,6 +207,13 @@
     <servlet-name>CounselingServletg</servlet-name>
     <url-pattern>/CounselingServletg</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>CommodityServletZ</servlet-name>
+        <servlet-class>servlet.CommodityServletZ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommodityServletZ</servlet-name>
+        <url-pattern>/CommodityServletZ</url-pattern>
+    </servlet-mapping>
 
 </web-app>
